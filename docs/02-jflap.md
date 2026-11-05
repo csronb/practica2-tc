@@ -193,5 +193,3 @@ $$L_k = \{ w \in \{0, 1\}^* \mid \text{el } k\text{-ésimo símbolo desde el fin
 ## Evidencias visuales de simulación en JFLAP (Ejercicio 2)
 * Véanse los diagramas y trazas paso a paso en [`evidencias/jflap/`](../evidencias/jflap/):
   ![Simulación AFND y conversión en JFLAP](../evidencias/jflap/sim_p2_afnd_lambda.svg)
-
-<!-- Verificado en rama feature/importar-jff para Pull Request #2 -->

@@ -67,5 +67,3 @@ jobs:
   ![Pull Requests fusionados](../evidencias/git/pull_requests_cerrados.svg)
 * **Ejecución de GitHub Actions con las tres versiones aprobadas (`3.11`, `3.12`, `3.13`)**:
   ![GitHub Actions CI aprobado](../evidencias/ci/github_actions_matrix.svg)
-
-<!-- Verificado en rama feature/simulacion-paso-a-paso para Pull Request #4 -->

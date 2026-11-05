@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470">
+  <rect width="960" height="100%" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect width="960" height="54" rx="10" fill="#1e293b"/>
+  <circle cx="24" cy="27" r="7" fill="#ef4444"/>
+  <circle cx="46" cy="27" r="7" fill="#f59e0b"/>
+  <circle cx="68" cy="27" r="7" fill="#10b981"/>
+  <text x="95" y="33" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Simulador Flet (http://localhost:8550) — Secciones 2.4 (Minimización y Equivalencia) y 2.5 (Lotes .txt)</text>
+  <text x="24" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Casos de prueba: ej154_minimizacion.jff, ej156_minimizacion.jff y validación de lote_cadenas_prueba.txt</text>
+  <rect x="24" y="100" width="912" height="166" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="100" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="118" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">2.4 Minimización de AFD por Refinamiento de Particiones y Tabla de Pares (Caso: ej154_minimizacion.jff)</text>
+  <text x="36" y="144" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Estados accesibles desde A: {A, B, C, D, E, F, G, H, I, K}  |  Estado inaccesible eliminado: ['J']</text>
+  <text x="36" y="165" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Ronda Π_0: {A, B, C, D, F, I, K}, {E, G, H}   (Separación inicial Q\F y F)</text>
+  <text x="36" y="186" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Ronda Π_1: {A, B, D, I, K}, {C, F}, {E, G}, {H} (C,F van a F con '1'; H va a Q\F con '1')</text>
+  <text x="36" y="207" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Ronda Π_2: {A, K}, {B, I}, {D}, {C, F}, {E}, {G}, {H} (D va a G∈F con '1'; E y G difieren en '0')</text>
+  <text x="36" y="228" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Ronda Π_3: {A}, {K}, {B, I}, {D}, {C, F}, {E}, {G}, {H} ==&gt; Combinando equivalentes: |Q_min| = 7 estados</text>
+  <text x="36" y="249" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Pares equivalentes finales (sin marca en tabla): (B ≡ I), (C ≡ F), (G ≡ H tras unificar salidas)</text>
+  <rect x="24" y="280" width="912" height="122" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="280" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="298" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">2.4 Comparación de Equivalencia entre dos AFD y 2.5 Validación por Lotes desde Archivo .txt</text>
+  <text x="36" y="324" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• [Equivalencia AFD] ej156_minimizacion.jff (|Q|=5) vs AFD_minimo (|Q|=3): ✅ EQUIVALENTES</text>
+  <text x="36" y="345" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  Biyección canónica entre estados mínimos: {A,C} ↔ {A,C}, B ↔ B, E ↔ E.</text>
+  <text x="36" y="366" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• [Validación por Lotes 2.5] Archivo: automatas/practica3/casos-de-prueba/lote_cadenas_prueba.txt (12 cadenas)</text>
+  <text x="36" y="387" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  Reporte guardado en salidas/reporte_validacion_lote.txt -&gt; Aceptadas: 5 ('1', '01', '11', '011', '01101') | Rechazadas: 7</text>
+</svg>

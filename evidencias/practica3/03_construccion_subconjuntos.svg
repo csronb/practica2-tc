@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340">
+  <rect width="960" height="100%" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect width="960" height="54" rx="10" fill="#1e293b"/>
+  <circle cx="24" cy="27" r="7" fill="#ef4444"/>
+  <circle cx="46" cy="27" r="7" fill="#f59e0b"/>
+  <circle cx="68" cy="27" r="7" fill="#10b981"/>
+  <text x="95" y="33" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Simulador Flet (http://localhost:8550) — Sección 2.3: Construcción de Subconjuntos Alcanzables</text>
+  <text x="24" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Caso de prueba: ej260_subconjuntos.jff (Lista 3, Ejercicio 260) — Sólo se generan los 10 subconjuntos alcanzables de 2^5 = 32</text>
+  <rect x="24" y="100" width="912" height="188" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="100" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="118" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">Tabla de transición generada paso a paso y justificación de estados de aceptación (S ∩ F ≠ ∅, con F = {D})</text>
+  <text x="36" y="144" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#0 | → {A}         | con '0' -&gt; ∅           | con '1' -&gt; {B,C}     | Aceptación: No  ({A} ∩ {D} = ∅)</text>
+  <text x="36" y="165" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#1 |   {B,C}       | con '0' -&gt; {A,B,C,D}   | con '1' -&gt; {A,C,D,E} | Aceptación: No  ({B,C} ∩ {D} = ∅)</text>
+  <text x="36" y="186" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#2 | * {A,B,C,D}   | con '0' -&gt; {A,B,C,D}   | con '1' -&gt; {A,B,C,D,E}| Aceptación: SÍ  ({A,B,C,D} ∩ F = {D} ≠ ∅)</text>
+  <text x="36" y="207" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#3 | * {A,C,D,E}   | con '0' -&gt; {A,C,E}     | con '1' -&gt; {A,B,C,D,E}| Aceptación: SÍ  ({A,C,D,E} ∩ F = {D} ≠ ∅)</text>
+  <text x="36" y="228" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#4 | * {A,B,C,D,E} | con '0' -&gt; {A,B,C,D,E} | con '1' -&gt; {A,B,C,D,E}| Aceptación: SÍ  ({A,B,C,D,E} ∩ F = {D} ≠ ∅)</text>
+  <text x="36" y="249" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#5 |   {A,C,E}     | con '0' -&gt; {A,C,E}     | con '1' -&gt; {A,B,C,E} | Aceptación: No  ({A,C,E} ∩ {D} = ∅)</text>
+  <text x="36" y="270" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">#6 |   {A,B,C,E}   | con '0' -&gt; {A,B,C,D,E} | con '1' -&gt; {A,B,C,D,E}| Aceptación: No  ({A,B,C,E} ∩ {D} = ∅)</text>
+</svg>

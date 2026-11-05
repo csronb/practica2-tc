@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500">
+  <rect width="960" height="100%" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect width="960" height="54" rx="10" fill="#1e293b"/>
+  <circle cx="24" cy="27" r="7" fill="#ef4444"/>
+  <circle cx="46" cy="27" r="7" fill="#f59e0b"/>
+  <circle cx="68" cy="27" r="7" fill="#10b981"/>
+  <text x="95" y="33" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Simulador Flet (http://localhost:8550) — Secciones 2.1 y 2.2 (AFN-λ: Ejercicios 196 a 200)</text>
+  <text x="24" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Cálculo de λ-clausura por estado, simulación directa (antes/después de Cl_λ) y eliminación de transiciones λ</text>
+  <rect x="24" y="100" width="912" height="166" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="100" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="118" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">2.1 Consulta de λ-clausura y Simulación Directa de AFN-λ (Caso: ej199_afnd_lambda.jff, cadena w = '011')</text>
+  <text x="36" y="144" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">Clausuras calculadas: Cl_λ({A}) = {A, B, C, E} | Cl_λ({B}) = {B} | Cl_λ({C}) = {C, E} | Cl_λ({D}) = {D} | Cl_λ({E}) = {E}</text>
+  <text x="36" y="165" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">[Paso 0] Símbolo='λ' | Origen=['A']          -&gt; Antes de Cl_λ=['A'] -&gt; Después de Cl_λ=['A', 'B', 'C', 'E']</text>
+  <text x="36" y="186" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">[Paso 1] Símbolo='0' | Origen=['A','B','C','E'] -&gt; Antes de Cl_λ=['E'] -&gt; Después de Cl_λ=['E']       (δ(A,0)={E}, δ(B,0)={E})</text>
+  <text x="36" y="207" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">[Paso 2] Símbolo='1' | Origen=['E']          -&gt; Antes de Cl_λ=['D'] -&gt; Después de Cl_λ=['D']       (δ(E,1)={D})</text>
+  <text x="36" y="228" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">[Paso 3] Símbolo='1' | Origen=['D']          -&gt; Antes de Cl_λ=['D'] -&gt; Después de Cl_λ=['D']       (δ(D,1)={D})</text>
+  <text x="36" y="249" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">Veredicto: Cadena '011' ACEPTADA | Estados finales alcanzados: ['D'] ∈ F={D, E}</text>
+  <rect x="24" y="280" width="912" height="188" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="280" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="298" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">2.2 Eliminación de Transiciones λ (Caso: ej199_afnd_lambda.jff -> AFN equivalente sin λ)</text>
+  <text x="36" y="324" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Estados de aceptación originales F = {D, E}  ==&gt;  Nuevos estados de aceptación F_N = {A, C, D, E}</text>
+  <text x="36" y="345" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  * Estado 'A' pasa a ser de aceptación porque Cl_λ({A}) = {A, B, C, E} contiene a ['E'] ∈ F</text>
+  <text x="36" y="366" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  * Estado 'C' pasa a ser de aceptación porque Cl_λ({C}) = {C, E} contiene a ['E'] ∈ F</text>
+  <text x="36" y="387" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">• Transiciones añadidas explícitamente (6 nuevas transiciones):</text>
+  <text x="36" y="408" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  * δ_N(A, 1) ∋ A  (vía A --λ*--&gt; C --1--&gt; A)      |  δ_N(A, 1) ∋ B  (vía A --λ*--&gt; B --1--&gt; B)</text>
+  <text x="36" y="429" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  * δ_N(A, 1) ∋ C  (vía A --λ*--&gt; C --1--&gt; C)      |  δ_N(A, 1) ∋ D  (vía A --λ*--&gt; E --1--&gt; D)</text>
+  <text x="36" y="450" font-family="Consolas, monospace" font-size="12.5" fill="#1e293b">  * δ_N(A, 1) ∋ E  (vía A --λ*--&gt; C --1--&gt; C --λ*--&gt; E) |  δ_N(C, 1) ∋ D, E (vía C --λ*--&gt; E --1--&gt; D)</text>
+</svg>

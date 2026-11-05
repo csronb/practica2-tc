@@ -1,0 +1,27 @@
+# Entorno del curso · Teoría de la Computación · 2027-1
+#
+#   docker compose up -d                 prender
+#   docker compose exec teoria bash      entrar a trabajar
+#   bash extras/comprobar.sh             comprobar el entorno (ya dentro)
+#   docker compose stop                  apagar
+#
+# Cada línea está explicada en docker_tutorial.md, partes 4, 5 y 7.
+
+# Nombre del proyecto. Sin esto, Compose usa el nombre de la carpeta, que
+# cambia de una computadora a otra y produce contenedores duplicados.
+name: teoria-computacion
+
+services:
+  teoria:
+    build: .                        # construye con el Dockerfile de esta carpeta
+    image: teoria-computacion:2027-1
+    container_name: teoria_computacion
+    volumes:
+      - ./:/trabajo                 # esta carpeta, vista desde dentro
+    working_dir: /trabajo
+    ports:
+      # tu máquina : contenedor. El 127.0.0.1 publica el puerto SÓLO en tu
+      # computadora; sin él, la interfaz queda visible para toda la red local.
+      - "127.0.0.1:8550:8550"       # la interfaz de Flet: http://localhost:8550
+    stdin_open: true                # las dos mantienen el contenedor
+    tty: true                       #   encendido, esperando órdenes

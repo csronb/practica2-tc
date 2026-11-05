@@ -56,5 +56,3 @@ $$\text{importar\_formato}(\text{exportar\_formato}(M)) = M$$
 ## 4. Evidencia del Simulador en Ejecución (`py312`)
 
 ![Simulador de Autómatas Finitos en Flet](../evidencias/app/simulador_flet_p2.svg)
-
-<!-- Verificado en rama feature/exportar-json-xml para Pull Request #3 -->

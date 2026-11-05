@@ -1,0 +1,9 @@
+# El script de comprobación se ejecuta DENTRO del contenedor, que es Linux.
+# Sin esta regla, Git en Windows lo guarda con finales de línea CRLF y bash
+# falla con un error confuso:
+#     bash: extras/comprobar.sh: cannot execute: required file not found
+# o bien   : command not found   con un renglón aparentemente vacío.
+*.sh         text eol=lf
+*.py         text eol=lf
+compose.yaml text eol=lf
+Dockerfile   text eol=lf
