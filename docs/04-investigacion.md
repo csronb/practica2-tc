@@ -246,3 +246,5 @@ La ACM destaca que el artículo de 1959 no solo resolvió de forma elegante los 
    **Definición de la Quíntupla del Autómata Finito, Construcción de Subconjuntos, Teorema de Myhill-Nerode y Algoritmo de Minimización de Hopcroft**.
 6. **Aportación al trabajo del curso (2–3 líneas)**:
    Sustenta tanto la teoría de minimización de la Sección 4.1 como la propuesta de investigación de nuestro Ejercicio 5.3, mostrando cómo se implementan hoy en día las operaciones de determinización y minimización de autómatas en bibliotecas de grado industrial.
+
+<!-- Verificado en rama feature/definicion-manual para Pull Request #1 -->
