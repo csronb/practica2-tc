@@ -1,0 +1,22 @@
+# Ignorar entornos virtuales
+venv/
+.venv/
+env/
+
+# Ignorar caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Ignorar salidas generadas por la aplicación
+salidas/
+*.txt
+!requirements.txt
+!evidencias/**/*.txt
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# NOTA: Los archivos .jff NO se excluyen ya que forman parte del entregable en automatas/
