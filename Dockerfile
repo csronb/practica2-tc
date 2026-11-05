@@ -24,6 +24,7 @@ ENV PIP_ROOT_USER_ACTION=ignore \
 # programan en Python puro.
 RUN pip install --no-cache-dir \
         "flet[web]==0.86.5" \
+        "fastapi<0.128.0" \
         pytest==8.3.4
 
 # Acentos, hora de la Ciudad de México, y Flet como página web en el puerto
