@@ -14,6 +14,7 @@ salidas/
 *.txt
 !requirements.txt
 !evidencias/**/*.txt
+!automatas/**/*.txt
 
 # Ignorar archivos de sistema
 .DS_Store

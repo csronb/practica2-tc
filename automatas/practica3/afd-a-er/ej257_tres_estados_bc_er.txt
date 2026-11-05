@@ -1,0 +1,3 @@
+Automata: ej257_tres_estados_bc
+ER_JFLAP: ((1+01*0)(0+1))*01*+((1+01*0)(0+1))*(1+01*0)
+ER_SIMPLIFICADA: ((1+01*0)(0+1))*(01*+1+01*0)
