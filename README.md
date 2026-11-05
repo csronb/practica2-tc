@@ -7,12 +7,12 @@
 
 | Campo | Información |
 | :--- | :--- |
-| **Alumno (Nombre completo)** | `[NOMBRE COMPLETO DEL ALUMNO]` |
-| **Número de Boleta** | `[NÚMERO DE BOLETA]` |
-| **Grupo** | `[GRUPO, EJ. 4CM1]` |
+| **Alumno (Nombre completo)** | `Cesar Octavio Navarro Bahena` |
+| **Número de Boleta** | `2023630464` |
+| **Grupo** | `4CM4 ` |
 | **Carrera** | Ingeniería en Sistemas Computacionales (Plan 2020) |
 | **Unidad de Aprendizaje** | Teoría de la Computación |
-| **Profesor(a)** | `[NOMBRE DEL PROFESOR(A)]` |
+| **Profesor(a)** | `Gabriel Hurtado Aviles` |
 | **Fecha de Entrega** | 6 de octubre de 2026 |
 | **Versión de Flet utilizada** | `flet[web]==0.86.5` |
 
