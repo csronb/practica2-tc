@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="AB" inicial="true" />
+    <estado nombre="CE" aceptacion="true" />
+    <estado nombre="DEF" aceptacion="true" />
+    <estado nombre="EF" aceptacion="true" />
+    <estado nombre="CDEFF" aceptacion="true" />
+    <estado nombre="ABCEF" aceptacion="true" />
+    <estado nombre="BD" aceptacion="true" />
+    <estado nombre="BE" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="AB" lee="0" hacia="CDEFF" />
+    <transicion desde="AB" lee="1" hacia="ABCEF" />
+    <transicion desde="CE" lee="0" hacia="EF" />
+    <transicion desde="CE" lee="1" hacia="ABCEF" />
+    <transicion desde="DEF" lee="0" hacia="ABCEF" />
+    <transicion desde="DEF" lee="1" hacia="BD" />
+    <transicion desde="EF" lee="0" hacia="BE" />
+    <transicion desde="EF" lee="1" hacia="DEF" />
+    <transicion desde="CDEFF" lee="0" hacia="ABCEF" />
+    <transicion desde="CDEFF" lee="1" hacia="ABCEF" />
+    <transicion desde="ABCEF" lee="0" hacia="ABCEF" />
+    <transicion desde="ABCEF" lee="1" hacia="ABCEF" />
+    <transicion desde="BD" lee="0" hacia="ABCEF" />
+    <transicion desde="BD" lee="1" hacia="BE" />
+    <transicion desde="BE" lee="0" hacia="CDEFF" />
+    <transicion desde="BE" lee="1" hacia="BD" />
+  </transiciones>
+</automata>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>P</simbolo>
+    <simbolo>N</simbolo>
+    <simbolo>A</simbolo>
+    <simbolo>S</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_Inicio_Feb" inicial="true" />
+    <estado nombre="q1_Ex_Feb" />
+    <estado nombre="q2_Sep_0usadas" />
+    <estado nombre="q3_Sep_1usada" />
+    <estado nombre="q4_Ex_Sep_1" />
+    <estado nombre="q5_Ex_Sep_2" />
+    <estado nombre="q6_Dic_Disp" />
+    <estado nombre="q7_Ex_Dic" />
+    <estado nombre="q8_Aprobado" aceptacion="true" />
+    <estado nombre="q9_Invalido" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_Inicio_Feb" lee="P" hacia="q1_Ex_Feb" />
+    <transicion desde="q0_Inicio_Feb" lee="N" hacia="q2_Sep_0usadas" />
+    <transicion desde="q0_Inicio_Feb" lee="A" hacia="q9_Invalido" />
+    <transicion desde="q0_Inicio_Feb" lee="S" hacia="q9_Invalido" />
+    <transicion desde="q1_Ex_Feb" lee="A" hacia="q8_Aprobado" />
+    <transicion desde="q1_Ex_Feb" lee="S" hacia="q3_Sep_1usada" />
+    <transicion desde="q1_Ex_Feb" lee="P" hacia="q9_Invalido" />
+    <transicion desde="q1_Ex_Feb" lee="N" hacia="q9_Invalido" />
+    <transicion desde="q2_Sep_0usadas" lee="P" hacia="q4_Ex_Sep_1" />
+    <transicion desde="q2_Sep_0usadas" lee="N" hacia="q6_Dic_Disp" />
+    <transicion desde="q2_Sep_0usadas" lee="A" hacia="q9_Invalido" />
+    <transicion desde="q2_Sep_0usadas" lee="S" hacia="q9_Invalido" />
+    <transicion desde="q3_Sep_1usada" lee="P" hacia="q5_Ex_Sep_2" />
+    <transicion desde="q3_Sep_1usada" lee="N" hacia="q6_Dic_Disp" />
+    <transicion desde="q3_Sep_1usada" lee="A" hacia="q9_Invalido" />
+    <transicion desde="q3_Sep_1usada" lee="S" hacia="q9_Invalido" />
+    <transicion desde="q4_Ex_Sep_1" lee="A" hacia="q8_Aprobado" />
+    <transicion desde="q4_Ex_Sep_1" lee="S" hacia="q6_Dic_Disp" />
+    <transicion desde="q4_Ex_Sep_1" lee="P" hacia="q9_Invalido" />
+    <transicion desde="q4_Ex_Sep_1" lee="N" hacia="q9_Invalido" />
+    <transicion desde="q5_Ex_Sep_2" lee="A" hacia="q8_Aprobado" />
+    <transicion desde="q5_Ex_Sep_2" lee="S" hacia="q0_Inicio_Feb" />
+    <transicion desde="q5_Ex_Sep_2" lee="P" hacia="q9_Invalido" />
+    <transicion desde="q5_Ex_Sep_2" lee="N" hacia="q9_Invalido" />
+    <transicion desde="q6_Dic_Disp" lee="P" hacia="q7_Ex_Dic" />
+    <transicion desde="q6_Dic_Disp" lee="N" hacia="q0_Inicio_Feb" />
+    <transicion desde="q6_Dic_Disp" lee="A" hacia="q9_Invalido" />
+    <transicion desde="q6_Dic_Disp" lee="S" hacia="q9_Invalido" />
+    <transicion desde="q7_Ex_Dic" lee="A" hacia="q8_Aprobado" />
+    <transicion desde="q7_Ex_Dic" lee="S" hacia="q0_Inicio_Feb" />
+    <transicion desde="q7_Ex_Dic" lee="P" hacia="q9_Invalido" />
+    <transicion desde="q7_Ex_Dic" lee="N" hacia="q9_Invalido" />
+    <transicion desde="q8_Aprobado" lee="P" hacia="q9_Invalido" />
+    <transicion desde="q8_Aprobado" lee="N" hacia="q9_Invalido" />
+    <transicion desde="q8_Aprobado" lee="A" hacia="q9_Invalido" />
+    <transicion desde="q8_Aprobado" lee="S" hacia="q9_Invalido" />
+    <transicion desde="q9_Invalido" lee="P" hacia="q9_Invalido" />
+    <transicion desde="q9_Invalido" lee="N" hacia="q9_Invalido" />
+    <transicion desde="q9_Invalido" lee="A" hacia="q9_Invalido" />
+    <transicion desde="q9_Invalido" lee="S" hacia="q9_Invalido" />
+  </transiciones>
+</automata>

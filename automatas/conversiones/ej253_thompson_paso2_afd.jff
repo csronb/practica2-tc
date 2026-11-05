@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<structure>
+  <type>fa</type>
+  <automaton>
+    <state id="0" name="q0">
+      <x>80.0</x>
+      <y>470.0</y>
+      <initial />
+      <final />
+    </state>
+    <state id="1" name="{q2,q4,q5,q8}">
+      <x>124.7</x>
+      <y>288.8</y>
+      <final />
+    </state>
+    <state id="2" name="{q3,q6,q7}">
+      <x>248.5</x>
+      <y>149.0</y>
+    </state>
+    <state id="3" name="{q1,q4,q5,q8}">
+      <x>423.0</x>
+      <y>82.8</y>
+      <final />
+    </state>
+    <state id="4" name="{q4,q6,q7,q8}">
+      <x>608.3</x>
+      <y>105.3</y>
+      <final />
+    </state>
+    <state id="5" name="{q4,q8}">
+      <x>761.9</x>
+      <y>211.4</y>
+      <final />
+    </state>
+    <state id="6" name="{q1,q4,q8}">
+      <x>848.7</x>
+      <y>376.7</y>
+      <final />
+    </state>
+    <state id="7" name="{q2,q5}">
+      <x>848.7</x>
+      <y>563.3</y>
+    </state>
+    <state id="8" name="{q3,q4,q6,q7,q8}">
+      <x>761.9</x>
+      <y>728.6</y>
+      <final />
+    </state>
+    <state id="9" name="{q4,q5,q8}">
+      <x>608.3</x>
+      <y>834.7</y>
+      <final />
+    </state>
+    <state id="10" name="q5">
+      <x>423.0</x>
+      <y>857.2</y>
+    </state>
+    <state id="11" name="{q6,q7}">
+      <x>248.5</x>
+      <y>791.0</y>
+    </state>
+    <state id="12" name="{q1,q4,q6,q7,q8}">
+      <x>124.7</x>
+      <y>651.2</y>
+      <final />
+    </state>
+    <transition>
+      <from>0</from>
+      <to>1</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>0</from>
+      <to>2</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>1</from>
+      <to>3</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>1</from>
+      <to>4</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>2</from>
+      <to>5</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>2</from>
+      <to>6</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>3</from>
+      <to>7</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>3</from>
+      <to>8</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>4</from>
+      <to>9</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>4</from>
+      <to>4</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>5</from>
+      <to>10</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>5</from>
+      <to>11</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>6</from>
+      <to>7</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>6</from>
+      <to>2</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>7</from>
+      <to>6</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>7</from>
+      <to>5</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>8</from>
+      <to>9</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>8</from>
+      <to>12</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>9</from>
+      <to>10</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>9</from>
+      <to>4</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>10</from>
+      <to>5</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>11</from>
+      <to>5</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>11</from>
+      <to>5</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>12</from>
+      <to>1</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>12</from>
+      <to>8</to>
+      <read>1</read>
+    </transition>
+  </automaton>
+</structure>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>a</simbolo>
+    <simbolo>b</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0" inicial="true" />
+    <estado nombre="q1_a" />
+    <estado nombre="q2_ab" />
+    <estado nombre="q3_abb" />
+    <estado nombre="q4_abba" />
+    <estado nombre="q5_abbab_ok" aceptacion="true" />
+    <estado nombre="q6_pozo" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0" lee="a" hacia="q1_a" />
+    <transicion desde="q0" lee="b" hacia="q6_pozo" />
+    <transicion desde="q1_a" lee="b" hacia="q2_ab" />
+    <transicion desde="q1_a" lee="a" hacia="q6_pozo" />
+    <transicion desde="q2_ab" lee="b" hacia="q3_abb" />
+    <transicion desde="q2_ab" lee="a" hacia="q6_pozo" />
+    <transicion desde="q3_abb" lee="a" hacia="q4_abba" />
+    <transicion desde="q3_abb" lee="b" hacia="q6_pozo" />
+    <transicion desde="q4_abba" lee="b" hacia="q5_abbab_ok" />
+    <transicion desde="q4_abba" lee="a" hacia="q6_pozo" />
+    <transicion desde="q5_abbab_ok" lee="a" hacia="q5_abbab_ok" />
+    <transicion desde="q5_abbab_ok" lee="b" hacia="q5_abbab_ok" />
+    <transicion desde="q6_pozo" lee="a" hacia="q6_pozo" />
+    <transicion desde="q6_pozo" lee="b" hacia="q6_pozo" />
+  </transiciones>
+</automata>

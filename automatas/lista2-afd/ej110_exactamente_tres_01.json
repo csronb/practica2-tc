@@ -1,0 +1,215 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1",
+    "2"
+  ],
+  "estados": [
+    "c0_no0",
+    "c0_0",
+    "c1_no0",
+    "c1_0",
+    "c2_no0",
+    "c2_0",
+    "c3_no0_ok",
+    "c3_0_ok",
+    "c4_pozo"
+  ],
+  "inicial": "c0_no0",
+  "aceptacion": [
+    "c3_no0_ok",
+    "c3_0_ok"
+  ],
+  "transiciones": [
+    {
+      "desde": "c0_no0",
+      "lee": "0",
+      "hacia": [
+        "c0_0"
+      ]
+    },
+    {
+      "desde": "c0_no0",
+      "lee": "1",
+      "hacia": [
+        "c0_no0"
+      ]
+    },
+    {
+      "desde": "c0_no0",
+      "lee": "2",
+      "hacia": [
+        "c0_no0"
+      ]
+    },
+    {
+      "desde": "c0_0",
+      "lee": "0",
+      "hacia": [
+        "c0_0"
+      ]
+    },
+    {
+      "desde": "c0_0",
+      "lee": "1",
+      "hacia": [
+        "c1_no0"
+      ]
+    },
+    {
+      "desde": "c0_0",
+      "lee": "2",
+      "hacia": [
+        "c0_no0"
+      ]
+    },
+    {
+      "desde": "c1_no0",
+      "lee": "0",
+      "hacia": [
+        "c1_0"
+      ]
+    },
+    {
+      "desde": "c1_no0",
+      "lee": "1",
+      "hacia": [
+        "c1_no0"
+      ]
+    },
+    {
+      "desde": "c1_no0",
+      "lee": "2",
+      "hacia": [
+        "c1_no0"
+      ]
+    },
+    {
+      "desde": "c1_0",
+      "lee": "0",
+      "hacia": [
+        "c1_0"
+      ]
+    },
+    {
+      "desde": "c1_0",
+      "lee": "1",
+      "hacia": [
+        "c2_no0"
+      ]
+    },
+    {
+      "desde": "c1_0",
+      "lee": "2",
+      "hacia": [
+        "c1_no0"
+      ]
+    },
+    {
+      "desde": "c2_no0",
+      "lee": "0",
+      "hacia": [
+        "c2_0"
+      ]
+    },
+    {
+      "desde": "c2_no0",
+      "lee": "1",
+      "hacia": [
+        "c2_no0"
+      ]
+    },
+    {
+      "desde": "c2_no0",
+      "lee": "2",
+      "hacia": [
+        "c2_no0"
+      ]
+    },
+    {
+      "desde": "c2_0",
+      "lee": "0",
+      "hacia": [
+        "c2_0"
+      ]
+    },
+    {
+      "desde": "c2_0",
+      "lee": "1",
+      "hacia": [
+        "c3_no0_ok"
+      ]
+    },
+    {
+      "desde": "c2_0",
+      "lee": "2",
+      "hacia": [
+        "c2_no0"
+      ]
+    },
+    {
+      "desde": "c3_no0_ok",
+      "lee": "0",
+      "hacia": [
+        "c3_0_ok"
+      ]
+    },
+    {
+      "desde": "c3_no0_ok",
+      "lee": "1",
+      "hacia": [
+        "c3_no0_ok"
+      ]
+    },
+    {
+      "desde": "c3_no0_ok",
+      "lee": "2",
+      "hacia": [
+        "c3_no0_ok"
+      ]
+    },
+    {
+      "desde": "c3_0_ok",
+      "lee": "0",
+      "hacia": [
+        "c3_0_ok"
+      ]
+    },
+    {
+      "desde": "c3_0_ok",
+      "lee": "1",
+      "hacia": [
+        "c4_pozo"
+      ]
+    },
+    {
+      "desde": "c3_0_ok",
+      "lee": "2",
+      "hacia": [
+        "c3_no0_ok"
+      ]
+    },
+    {
+      "desde": "c4_pozo",
+      "lee": "0",
+      "hacia": [
+        "c4_pozo"
+      ]
+    },
+    {
+      "desde": "c4_pozo",
+      "lee": "1",
+      "hacia": [
+        "c4_pozo"
+      ]
+    },
+    {
+      "desde": "c4_pozo",
+      "lee": "2",
+      "hacia": [
+        "c4_pozo"
+      ]
+    }
+  ]
+}

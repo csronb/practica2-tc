@@ -1,0 +1,105 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1"
+  ],
+  "estados": [
+    "q0_par_sin01",
+    "q1_impar_1",
+    "q2_impar_0",
+    "q3_par_0",
+    "q4_par_con01",
+    "q5_impar_con01"
+  ],
+  "inicial": "q0_par_sin01",
+  "aceptacion": [
+    "q4_par_con01"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0_par_sin01",
+      "lee": "0",
+      "hacia": [
+        "q2_impar_0"
+      ]
+    },
+    {
+      "desde": "q0_par_sin01",
+      "lee": "1",
+      "hacia": [
+        "q1_impar_1"
+      ]
+    },
+    {
+      "desde": "q1_impar_1",
+      "lee": "0",
+      "hacia": [
+        "q3_par_0"
+      ]
+    },
+    {
+      "desde": "q1_impar_1",
+      "lee": "1",
+      "hacia": [
+        "q0_par_sin01"
+      ]
+    },
+    {
+      "desde": "q2_impar_0",
+      "lee": "0",
+      "hacia": [
+        "q3_par_0"
+      ]
+    },
+    {
+      "desde": "q2_impar_0",
+      "lee": "1",
+      "hacia": [
+        "q4_par_con01"
+      ]
+    },
+    {
+      "desde": "q3_par_0",
+      "lee": "0",
+      "hacia": [
+        "q2_impar_0"
+      ]
+    },
+    {
+      "desde": "q3_par_0",
+      "lee": "1",
+      "hacia": [
+        "q5_impar_con01"
+      ]
+    },
+    {
+      "desde": "q4_par_con01",
+      "lee": "0",
+      "hacia": [
+        "q5_impar_con01"
+      ]
+    },
+    {
+      "desde": "q4_par_con01",
+      "lee": "1",
+      "hacia": [
+        "q5_impar_con01"
+      ]
+    },
+    {
+      "desde": "q5_impar_con01",
+      "lee": "0",
+      "hacia": [
+        "q4_par_con01"
+      ]
+    },
+    {
+      "desde": "q5_impar_con01",
+      "lee": "1",
+      "hacia": [
+        "q4_par_con01"
+      ]
+    }
+  ]
+}

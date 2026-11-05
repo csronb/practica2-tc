@@ -1,0 +1,148 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1",
+    "2"
+  ],
+  "estados": [
+    "q0",
+    "q1_2",
+    "q2_20",
+    "q3_len3",
+    "q4_ok",
+    "q5_pozo"
+  ],
+  "inicial": "q0",
+  "aceptacion": [
+    "q4_ok"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0",
+      "lee": "2",
+      "hacia": [
+        "q1_2"
+      ]
+    },
+    {
+      "desde": "q0",
+      "lee": "0",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q0",
+      "lee": "1",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q1_2",
+      "lee": "0",
+      "hacia": [
+        "q2_20"
+      ]
+    },
+    {
+      "desde": "q1_2",
+      "lee": "1",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q1_2",
+      "lee": "2",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q2_20",
+      "lee": "0",
+      "hacia": [
+        "q3_len3"
+      ]
+    },
+    {
+      "desde": "q2_20",
+      "lee": "1",
+      "hacia": [
+        "q3_len3"
+      ]
+    },
+    {
+      "desde": "q2_20",
+      "lee": "2",
+      "hacia": [
+        "q3_len3"
+      ]
+    },
+    {
+      "desde": "q3_len3",
+      "lee": "0",
+      "hacia": [
+        "q4_ok"
+      ]
+    },
+    {
+      "desde": "q3_len3",
+      "lee": "1",
+      "hacia": [
+        "q4_ok"
+      ]
+    },
+    {
+      "desde": "q3_len3",
+      "lee": "2",
+      "hacia": [
+        "q4_ok"
+      ]
+    },
+    {
+      "desde": "q4_ok",
+      "lee": "0",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q4_ok",
+      "lee": "1",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q4_ok",
+      "lee": "2",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q5_pozo",
+      "lee": "0",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q5_pozo",
+      "lee": "1",
+      "hacia": [
+        "q5_pozo"
+      ]
+    },
+    {
+      "desde": "q5_pozo",
+      "lee": "2",
+      "hacia": [
+        "q5_pozo"
+      ]
+    }
+  ]
+}

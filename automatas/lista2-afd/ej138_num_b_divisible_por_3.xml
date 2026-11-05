@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>a</simbolo>
+    <simbolo>b</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_mod0" inicial="true" aceptacion="true" />
+    <estado nombre="q1_mod1" />
+    <estado nombre="q2_mod2" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_mod0" lee="a" hacia="q0_mod0" />
+    <transicion desde="q0_mod0" lee="b" hacia="q1_mod1" />
+    <transicion desde="q1_mod1" lee="a" hacia="q1_mod1" />
+    <transicion desde="q1_mod1" lee="b" hacia="q2_mod2" />
+    <transicion desde="q2_mod2" lee="a" hacia="q2_mod2" />
+    <transicion desde="q2_mod2" lee="b" hacia="q0_mod0" />
+  </transiciones>
+</automata>

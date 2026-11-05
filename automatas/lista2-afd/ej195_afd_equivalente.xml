@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="A" inicial="true" />
+    <estado nombre="AB" />
+    <estado nombre="AC" aceptacion="true" />
+    <estado nombre="AD" />
+    <estado nombre="ABD" />
+    <estado nombre="AE" aceptacion="true" />
+    <estado nombre="ACE" aceptacion="true" />
+    <estado nombre="ABE" aceptacion="true" />
+    <estado nombre="ACD" aceptacion="true" />
+    <estado nombre="ADE" aceptacion="true" />
+    <estado nombre="ABDE" aceptacion="true" />
+    <estado nombre="ACDE" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="A" lee="0" hacia="AB" />
+    <transicion desde="A" lee="1" hacia="A" />
+    <transicion desde="AB" lee="0" hacia="AB" />
+    <transicion desde="AB" lee="1" hacia="AC" />
+    <transicion desde="AC" lee="0" hacia="AB" />
+    <transicion desde="AC" lee="1" hacia="AD" />
+    <transicion desde="AD" lee="0" hacia="ABD" />
+    <transicion desde="AD" lee="1" hacia="AE" />
+    <transicion desde="ABD" lee="0" hacia="ABD" />
+    <transicion desde="ABD" lee="1" hacia="ACE" />
+    <transicion desde="AE" lee="0" hacia="ABE" />
+    <transicion desde="AE" lee="1" hacia="ACD" />
+    <transicion desde="ACE" lee="0" hacia="ABE" />
+    <transicion desde="ACE" lee="1" hacia="ACD" />
+    <transicion desde="ABE" lee="0" hacia="ABE" />
+    <transicion desde="ABE" lee="1" hacia="ACD" />
+    <transicion desde="ACD" lee="0" hacia="ABD" />
+    <transicion desde="ACD" lee="1" hacia="ADE" />
+    <transicion desde="ADE" lee="0" hacia="ABDE" />
+    <transicion desde="ADE" lee="1" hacia="ACDE" />
+    <transicion desde="ABDE" lee="0" hacia="ABDE" />
+    <transicion desde="ABDE" lee="1" hacia="ACDE" />
+    <transicion desde="ACDE" lee="0" hacia="ABDE" />
+    <transicion desde="ACDE" lee="1" hacia="ACDE" />
+  </transiciones>
+</automata>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>a</simbolo>
+    <simbolo>b</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="1" inicial="true" />
+    <estado nombre="2" />
+    <estado nombre="3" />
+    <estado nombre="4" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="1" lee="a" hacia="3" />
+    <transicion desde="1" lee="b" hacia="2" />
+    <transicion desde="2" lee="a" hacia="1" />
+    <transicion desde="2" lee="b" hacia="3" />
+    <transicion desde="3" lee="a" hacia="2" />
+    <transicion desde="3" lee="b" hacia="3" />
+    <transicion desde="4" lee="a" hacia="1" />
+    <transicion desde="4" lee="b" hacia="4" />
+  </transiciones>
+</automata>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="A" inicial="true" />
+    <estado nombre="B" />
+    <estado nombre="BC" aceptacion="true" />
+    <estado nombre="AB" />
+    <estado nombre="ABC" aceptacion="true" />
+    <estado nombre="emptyset" />
+  </estados>
+  <transiciones>
+    <transicion desde="A" lee="0" hacia="B" />
+    <transicion desde="A" lee="1" hacia="BC" />
+    <transicion desde="B" lee="0" hacia="AB" />
+    <transicion desde="B" lee="1" hacia="emptyset" />
+    <transicion desde="BC" lee="0" hacia="ABC" />
+    <transicion desde="BC" lee="1" hacia="emptyset" />
+    <transicion desde="AB" lee="0" hacia="AB" />
+    <transicion desde="AB" lee="1" hacia="BC" />
+    <transicion desde="ABC" lee="0" hacia="ABC" />
+    <transicion desde="ABC" lee="1" hacia="BC" />
+    <transicion desde="emptyset" lee="0" hacia="emptyset" />
+    <transicion desde="emptyset" lee="1" hacia="emptyset" />
+  </transiciones>
+</automata>
