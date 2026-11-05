@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+    <simbolo>2</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_0_noCero" inicial="true" aceptacion="true" />
+    <estado nombre="q1_1_noCero" aceptacion="true" />
+    <estado nombre="q2_2_noCero" aceptacion="true" />
+    <estado nombre="q3_pozo_3noCero" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_0_noCero" lee="0" hacia="q0_0_noCero" />
+    <transicion desde="q0_0_noCero" lee="1" hacia="q1_1_noCero" />
+    <transicion desde="q0_0_noCero" lee="2" hacia="q1_1_noCero" />
+    <transicion desde="q1_1_noCero" lee="0" hacia="q0_0_noCero" />
+    <transicion desde="q1_1_noCero" lee="1" hacia="q2_2_noCero" />
+    <transicion desde="q1_1_noCero" lee="2" hacia="q2_2_noCero" />
+    <transicion desde="q2_2_noCero" lee="0" hacia="q0_0_noCero" />
+    <transicion desde="q2_2_noCero" lee="1" hacia="q3_pozo_3noCero" />
+    <transicion desde="q2_2_noCero" lee="2" hacia="q3_pozo_3noCero" />
+    <transicion desde="q3_pozo_3noCero" lee="0" hacia="q3_pozo_3noCero" />
+    <transicion desde="q3_pozo_3noCero" lee="1" hacia="q3_pozo_3noCero" />
+    <transicion desde="q3_pozo_3noCero" lee="2" hacia="q3_pozo_3noCero" />
+  </transiciones>
+</automata>

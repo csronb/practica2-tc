@@ -1,0 +1,162 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "a",
+    "b",
+    "c",
+    "0",
+    "1"
+  ],
+  "estados": [
+    "q0",
+    "q1_letra",
+    "q2_ok",
+    "q3_pozo"
+  ],
+  "inicial": "q0",
+  "aceptacion": [
+    "q2_ok"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0",
+      "lee": "a",
+      "hacia": [
+        "q1_letra"
+      ]
+    },
+    {
+      "desde": "q1_letra",
+      "lee": "a",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q2_ok",
+      "lee": "a",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q3_pozo",
+      "lee": "a",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q0",
+      "lee": "b",
+      "hacia": [
+        "q1_letra"
+      ]
+    },
+    {
+      "desde": "q1_letra",
+      "lee": "b",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q2_ok",
+      "lee": "b",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q3_pozo",
+      "lee": "b",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q0",
+      "lee": "c",
+      "hacia": [
+        "q1_letra"
+      ]
+    },
+    {
+      "desde": "q1_letra",
+      "lee": "c",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q2_ok",
+      "lee": "c",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q3_pozo",
+      "lee": "c",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q0",
+      "lee": "0",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q1_letra",
+      "lee": "0",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q2_ok",
+      "lee": "0",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q3_pozo",
+      "lee": "0",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q0",
+      "lee": "1",
+      "hacia": [
+        "q3_pozo"
+      ]
+    },
+    {
+      "desde": "q1_letra",
+      "lee": "1",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q2_ok",
+      "lee": "1",
+      "hacia": [
+        "q2_ok"
+      ]
+    },
+    {
+      "desde": "q3_pozo",
+      "lee": "1",
+      "hacia": [
+        "q3_pozo"
+      ]
+    }
+  ]
+}

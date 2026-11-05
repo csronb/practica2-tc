@@ -1,0 +1,60 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1"
+  ],
+  "estados": [
+    "q0_ok",
+    "q1_vio_0",
+    "q2_pozo_00"
+  ],
+  "inicial": "q0_ok",
+  "aceptacion": [
+    "q0_ok"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0_ok",
+      "lee": "0",
+      "hacia": [
+        "q1_vio_0"
+      ]
+    },
+    {
+      "desde": "q0_ok",
+      "lee": "1",
+      "hacia": [
+        "q0_ok"
+      ]
+    },
+    {
+      "desde": "q1_vio_0",
+      "lee": "0",
+      "hacia": [
+        "q2_pozo_00"
+      ]
+    },
+    {
+      "desde": "q1_vio_0",
+      "lee": "1",
+      "hacia": [
+        "q0_ok"
+      ]
+    },
+    {
+      "desde": "q2_pozo_00",
+      "lee": "0",
+      "hacia": [
+        "q2_pozo_00"
+      ]
+    },
+    {
+      "desde": "q2_pozo_00",
+      "lee": "1",
+      "hacia": [
+        "q2_pozo_00"
+      ]
+    }
+  ]
+}

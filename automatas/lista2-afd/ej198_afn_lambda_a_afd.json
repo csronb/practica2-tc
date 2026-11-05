@@ -1,0 +1,60 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1"
+  ],
+  "estados": [
+    "ABC",
+    "BC",
+    "BCD"
+  ],
+  "inicial": "ABC",
+  "aceptacion": [
+    "BCD"
+  ],
+  "transiciones": [
+    {
+      "desde": "ABC",
+      "lee": "0",
+      "hacia": [
+        "BC"
+      ]
+    },
+    {
+      "desde": "ABC",
+      "lee": "1",
+      "hacia": [
+        "BCD"
+      ]
+    },
+    {
+      "desde": "BC",
+      "lee": "0",
+      "hacia": [
+        "BC"
+      ]
+    },
+    {
+      "desde": "BC",
+      "lee": "1",
+      "hacia": [
+        "BCD"
+      ]
+    },
+    {
+      "desde": "BCD",
+      "lee": "0",
+      "hacia": [
+        "BC"
+      ]
+    },
+    {
+      "desde": "BCD",
+      "lee": "1",
+      "hacia": [
+        "BCD"
+      ]
+    }
+  ]
+}

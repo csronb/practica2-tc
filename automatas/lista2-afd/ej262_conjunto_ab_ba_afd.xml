@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>a</simbolo>
+    <simbolo>b</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_ini" inicial="true" />
+    <estado nombre="q1_a" />
+    <estado nombre="q2_b" />
+    <estado nombre="q3_acepta_ab_ba" aceptacion="true" />
+    <estado nombre="q4_pozo" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_ini" lee="a" hacia="q1_a" />
+    <transicion desde="q0_ini" lee="b" hacia="q2_b" />
+    <transicion desde="q1_a" lee="a" hacia="q4_pozo" />
+    <transicion desde="q1_a" lee="b" hacia="q3_acepta_ab_ba" />
+    <transicion desde="q2_b" lee="a" hacia="q3_acepta_ab_ba" />
+    <transicion desde="q2_b" lee="b" hacia="q4_pozo" />
+    <transicion desde="q3_acepta_ab_ba" lee="a" hacia="q4_pozo" />
+    <transicion desde="q3_acepta_ab_ba" lee="b" hacia="q4_pozo" />
+    <transicion desde="q4_pozo" lee="a" hacia="q4_pozo" />
+    <transicion desde="q4_pozo" lee="b" hacia="q4_pozo" />
+  </transiciones>
+</automata>

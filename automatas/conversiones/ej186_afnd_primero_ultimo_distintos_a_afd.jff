@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<structure>
+  <type>fa</type>
+  <automaton>
+    <state id="0" name="q0">
+      <x>80.0</x>
+      <y>290.0</y>
+      <initial />
+    </state>
+    <state id="1" name="q_ini0">
+      <x>159.1</x>
+      <y>125.8</y>
+    </state>
+    <state id="2" name="q_ini1">
+      <x>336.7</x>
+      <y>85.3</y>
+    </state>
+    <state id="3" name="q_ini2">
+      <x>479.2</x>
+      <y>198.9</y>
+    </state>
+    <state id="4" name="{q_ini0,q_fin}">
+      <x>479.2</x>
+      <y>381.1</y>
+      <final />
+    </state>
+    <state id="5" name="{q_ini1,q_fin}">
+      <x>336.7</x>
+      <y>494.7</y>
+      <final />
+    </state>
+    <state id="6" name="{q_ini2,q_fin}">
+      <x>159.1</x>
+      <y>454.2</y>
+      <final />
+    </state>
+    <transition>
+      <from>0</from>
+      <to>1</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>0</from>
+      <to>2</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>0</from>
+      <to>3</to>
+      <read>2</read>
+    </transition>
+    <transition>
+      <from>1</from>
+      <to>1</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>1</from>
+      <to>4</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>1</from>
+      <to>4</to>
+      <read>2</read>
+    </transition>
+    <transition>
+      <from>2</from>
+      <to>5</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>2</from>
+      <to>2</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>2</from>
+      <to>5</to>
+      <read>2</read>
+    </transition>
+    <transition>
+      <from>3</from>
+      <to>6</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>3</from>
+      <to>6</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>3</from>
+      <to>3</to>
+      <read>2</read>
+    </transition>
+    <transition>
+      <from>4</from>
+      <to>1</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>4</from>
+      <to>4</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>4</from>
+      <to>4</to>
+      <read>2</read>
+    </transition>
+    <transition>
+      <from>5</from>
+      <to>5</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>5</from>
+      <to>2</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>5</from>
+      <to>5</to>
+      <read>2</read>
+    </transition>
+    <transition>
+      <from>6</from>
+      <to>6</to>
+      <read>0</read>
+    </transition>
+    <transition>
+      <from>6</from>
+      <to>6</to>
+      <read>1</read>
+    </transition>
+    <transition>
+      <from>6</from>
+      <to>3</to>
+      <read>2</read>
+    </transition>
+  </automaton>
+</structure>

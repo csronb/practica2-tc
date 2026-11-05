@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>a</simbolo>
+    <simbolo>b</simbolo>
+    <simbolo>c</simbolo>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0" inicial="true" />
+    <estado nombre="q1_letra" />
+    <estado nombre="q2_ok" aceptacion="true" />
+    <estado nombre="q3_pozo" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0" lee="a" hacia="q1_letra" />
+    <transicion desde="q1_letra" lee="a" hacia="q3_pozo" />
+    <transicion desde="q2_ok" lee="a" hacia="q2_ok" />
+    <transicion desde="q3_pozo" lee="a" hacia="q3_pozo" />
+    <transicion desde="q0" lee="b" hacia="q1_letra" />
+    <transicion desde="q1_letra" lee="b" hacia="q3_pozo" />
+    <transicion desde="q2_ok" lee="b" hacia="q2_ok" />
+    <transicion desde="q3_pozo" lee="b" hacia="q3_pozo" />
+    <transicion desde="q0" lee="c" hacia="q1_letra" />
+    <transicion desde="q1_letra" lee="c" hacia="q3_pozo" />
+    <transicion desde="q2_ok" lee="c" hacia="q2_ok" />
+    <transicion desde="q3_pozo" lee="c" hacia="q3_pozo" />
+    <transicion desde="q0" lee="0" hacia="q3_pozo" />
+    <transicion desde="q1_letra" lee="0" hacia="q2_ok" />
+    <transicion desde="q2_ok" lee="0" hacia="q2_ok" />
+    <transicion desde="q3_pozo" lee="0" hacia="q3_pozo" />
+    <transicion desde="q0" lee="1" hacia="q3_pozo" />
+    <transicion desde="q1_letra" lee="1" hacia="q2_ok" />
+    <transicion desde="q2_ok" lee="1" hacia="q2_ok" />
+    <transicion desde="q3_pozo" lee="1" hacia="q3_pozo" />
+  </transiciones>
+</automata>

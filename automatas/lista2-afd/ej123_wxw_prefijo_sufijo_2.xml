@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>a</simbolo>
+    <simbolo>b</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_λ" inicial="true" />
+    <estado nombre="q1_a" />
+    <estado nombre="q2_b" />
+    <estado nombre="w_aa_len2" />
+    <estado nombre="w_aa_len3_a" />
+    <estado nombre="w_aa_len3_b" />
+    <estado nombre="w_aa_suf_aa" aceptacion="true" />
+    <estado nombre="w_aa_suf_ab" />
+    <estado nombre="w_aa_suf_ba" />
+    <estado nombre="w_aa_suf_bb" />
+    <estado nombre="w_ab_len2" />
+    <estado nombre="w_ab_len3_a" />
+    <estado nombre="w_ab_len3_b" />
+    <estado nombre="w_ab_suf_aa" />
+    <estado nombre="w_ab_suf_ab" aceptacion="true" />
+    <estado nombre="w_ab_suf_ba" />
+    <estado nombre="w_ab_suf_bb" />
+    <estado nombre="w_ba_len2" />
+    <estado nombre="w_ba_len3_a" />
+    <estado nombre="w_ba_len3_b" />
+    <estado nombre="w_ba_suf_aa" />
+    <estado nombre="w_ba_suf_ab" />
+    <estado nombre="w_ba_suf_ba" aceptacion="true" />
+    <estado nombre="w_ba_suf_bb" />
+    <estado nombre="w_bb_len2" />
+    <estado nombre="w_bb_len3_a" />
+    <estado nombre="w_bb_len3_b" />
+    <estado nombre="w_bb_suf_aa" />
+    <estado nombre="w_bb_suf_ab" />
+    <estado nombre="w_bb_suf_ba" />
+    <estado nombre="w_bb_suf_bb" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_λ" lee="a" hacia="q1_a" />
+    <transicion desde="q0_λ" lee="b" hacia="q2_b" />
+    <transicion desde="q1_a" lee="a" hacia="w_aa_len2" />
+    <transicion desde="q1_a" lee="b" hacia="w_ab_len2" />
+    <transicion desde="q2_b" lee="a" hacia="w_ba_len2" />
+    <transicion desde="q2_b" lee="b" hacia="w_bb_len2" />
+    <transicion desde="w_aa_len2" lee="a" hacia="w_aa_len3_a" />
+    <transicion desde="w_aa_len3_a" lee="a" hacia="w_aa_suf_aa" />
+    <transicion desde="w_aa_len3_a" lee="b" hacia="w_aa_suf_ab" />
+    <transicion desde="w_aa_len2" lee="b" hacia="w_aa_len3_b" />
+    <transicion desde="w_aa_len3_b" lee="a" hacia="w_aa_suf_ba" />
+    <transicion desde="w_aa_len3_b" lee="b" hacia="w_aa_suf_bb" />
+    <transicion desde="w_aa_suf_aa" lee="a" hacia="w_aa_suf_aa" />
+    <transicion desde="w_aa_suf_aa" lee="b" hacia="w_aa_suf_ab" />
+    <transicion desde="w_aa_suf_ab" lee="a" hacia="w_aa_suf_ba" />
+    <transicion desde="w_aa_suf_ab" lee="b" hacia="w_aa_suf_bb" />
+    <transicion desde="w_aa_suf_ba" lee="a" hacia="w_aa_suf_aa" />
+    <transicion desde="w_aa_suf_ba" lee="b" hacia="w_aa_suf_ab" />
+    <transicion desde="w_aa_suf_bb" lee="a" hacia="w_aa_suf_ba" />
+    <transicion desde="w_aa_suf_bb" lee="b" hacia="w_aa_suf_bb" />
+    <transicion desde="w_ab_len2" lee="a" hacia="w_ab_len3_a" />
+    <transicion desde="w_ab_len3_a" lee="a" hacia="w_ab_suf_aa" />
+    <transicion desde="w_ab_len3_a" lee="b" hacia="w_ab_suf_ab" />
+    <transicion desde="w_ab_len2" lee="b" hacia="w_ab_len3_b" />
+    <transicion desde="w_ab_len3_b" lee="a" hacia="w_ab_suf_ba" />
+    <transicion desde="w_ab_len3_b" lee="b" hacia="w_ab_suf_bb" />
+    <transicion desde="w_ab_suf_aa" lee="a" hacia="w_ab_suf_aa" />
+    <transicion desde="w_ab_suf_aa" lee="b" hacia="w_ab_suf_ab" />
+    <transicion desde="w_ab_suf_ab" lee="a" hacia="w_ab_suf_ba" />
+    <transicion desde="w_ab_suf_ab" lee="b" hacia="w_ab_suf_bb" />
+    <transicion desde="w_ab_suf_ba" lee="a" hacia="w_ab_suf_aa" />
+    <transicion desde="w_ab_suf_ba" lee="b" hacia="w_ab_suf_ab" />
+    <transicion desde="w_ab_suf_bb" lee="a" hacia="w_ab_suf_ba" />
+    <transicion desde="w_ab_suf_bb" lee="b" hacia="w_ab_suf_bb" />
+    <transicion desde="w_ba_len2" lee="a" hacia="w_ba_len3_a" />
+    <transicion desde="w_ba_len3_a" lee="a" hacia="w_ba_suf_aa" />
+    <transicion desde="w_ba_len3_a" lee="b" hacia="w_ba_suf_ab" />
+    <transicion desde="w_ba_len2" lee="b" hacia="w_ba_len3_b" />
+    <transicion desde="w_ba_len3_b" lee="a" hacia="w_ba_suf_ba" />
+    <transicion desde="w_ba_len3_b" lee="b" hacia="w_ba_suf_bb" />
+    <transicion desde="w_ba_suf_aa" lee="a" hacia="w_ba_suf_aa" />
+    <transicion desde="w_ba_suf_aa" lee="b" hacia="w_ba_suf_ab" />
+    <transicion desde="w_ba_suf_ab" lee="a" hacia="w_ba_suf_ba" />
+    <transicion desde="w_ba_suf_ab" lee="b" hacia="w_ba_suf_bb" />
+    <transicion desde="w_ba_suf_ba" lee="a" hacia="w_ba_suf_aa" />
+    <transicion desde="w_ba_suf_ba" lee="b" hacia="w_ba_suf_ab" />
+    <transicion desde="w_ba_suf_bb" lee="a" hacia="w_ba_suf_ba" />
+    <transicion desde="w_ba_suf_bb" lee="b" hacia="w_ba_suf_bb" />
+    <transicion desde="w_bb_len2" lee="a" hacia="w_bb_len3_a" />
+    <transicion desde="w_bb_len3_a" lee="a" hacia="w_bb_suf_aa" />
+    <transicion desde="w_bb_len3_a" lee="b" hacia="w_bb_suf_ab" />
+    <transicion desde="w_bb_len2" lee="b" hacia="w_bb_len3_b" />
+    <transicion desde="w_bb_len3_b" lee="a" hacia="w_bb_suf_ba" />
+    <transicion desde="w_bb_len3_b" lee="b" hacia="w_bb_suf_bb" />
+    <transicion desde="w_bb_suf_aa" lee="a" hacia="w_bb_suf_aa" />
+    <transicion desde="w_bb_suf_aa" lee="b" hacia="w_bb_suf_ab" />
+    <transicion desde="w_bb_suf_ab" lee="a" hacia="w_bb_suf_ba" />
+    <transicion desde="w_bb_suf_ab" lee="b" hacia="w_bb_suf_bb" />
+    <transicion desde="w_bb_suf_ba" lee="a" hacia="w_bb_suf_aa" />
+    <transicion desde="w_bb_suf_ba" lee="b" hacia="w_bb_suf_ab" />
+    <transicion desde="w_bb_suf_bb" lee="a" hacia="w_bb_suf_ba" />
+    <transicion desde="w_bb_suf_bb" lee="b" hacia="w_bb_suf_bb" />
+  </transiciones>
+</automata>

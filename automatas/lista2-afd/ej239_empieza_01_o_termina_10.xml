@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_ini" inicial="true" />
+    <estado nombre="q1_0" />
+    <estado nombre="q2_pref01_ok" aceptacion="true" />
+    <estado nombre="q3_no01_ otro" />
+    <estado nombre="q4_no01_vio1" />
+    <estado nombre="q5_no01_suf10_ok" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_ini" lee="0" hacia="q1_0" />
+    <transicion desde="q0_ini" lee="1" hacia="q4_no01_vio1" />
+    <transicion desde="q1_0" lee="0" hacia="q3_no01_ otro" />
+    <transicion desde="q1_0" lee="1" hacia="q2_pref01_ok" />
+    <transicion desde="q2_pref01_ok" lee="0" hacia="q2_pref01_ok" />
+    <transicion desde="q2_pref01_ok" lee="1" hacia="q2_pref01_ok" />
+    <transicion desde="q3_no01_ otro" lee="0" hacia="q3_no01_ otro" />
+    <transicion desde="q3_no01_ otro" lee="1" hacia="q4_no01_vio1" />
+    <transicion desde="q4_no01_vio1" lee="0" hacia="q5_no01_suf10_ok" />
+    <transicion desde="q4_no01_vio1" lee="1" hacia="q4_no01_vio1" />
+    <transicion desde="q5_no01_suf10_ok" lee="0" hacia="q3_no01_ otro" />
+    <transicion desde="q5_no01_suf10_ok" lee="1" hacia="q4_no01_vio1" />
+  </transiciones>
+</automata>

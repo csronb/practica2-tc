@@ -1,0 +1,76 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "a",
+    "b"
+  ],
+  "estados": [
+    "q0_ok",
+    "q1_a_ok",
+    "q2_aa_espera_b",
+    "q3_pozo_aaa"
+  ],
+  "inicial": "q0_ok",
+  "aceptacion": [
+    "q0_ok",
+    "q1_a_ok"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0_ok",
+      "lee": "a",
+      "hacia": [
+        "q1_a_ok"
+      ]
+    },
+    {
+      "desde": "q0_ok",
+      "lee": "b",
+      "hacia": [
+        "q0_ok"
+      ]
+    },
+    {
+      "desde": "q1_a_ok",
+      "lee": "a",
+      "hacia": [
+        "q2_aa_espera_b"
+      ]
+    },
+    {
+      "desde": "q1_a_ok",
+      "lee": "b",
+      "hacia": [
+        "q0_ok"
+      ]
+    },
+    {
+      "desde": "q2_aa_espera_b",
+      "lee": "b",
+      "hacia": [
+        "q0_ok"
+      ]
+    },
+    {
+      "desde": "q2_aa_espera_b",
+      "lee": "a",
+      "hacia": [
+        "q3_pozo_aaa"
+      ]
+    },
+    {
+      "desde": "q3_pozo_aaa",
+      "lee": "a",
+      "hacia": [
+        "q3_pozo_aaa"
+      ]
+    },
+    {
+      "desde": "q3_pozo_aaa",
+      "lee": "b",
+      "hacia": [
+        "q3_pozo_aaa"
+      ]
+    }
+  ]
+}

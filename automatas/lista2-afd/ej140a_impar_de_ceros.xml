@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_par" inicial="true" />
+    <estado nombre="q1_impar" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_par" lee="0" hacia="q1_impar" />
+    <transicion desde="q0_par" lee="1" hacia="q0_par" />
+    <transicion desde="q1_impar" lee="0" hacia="q0_par" />
+    <transicion desde="q1_impar" lee="1" hacia="q1_impar" />
+  </transiciones>
+</automata>

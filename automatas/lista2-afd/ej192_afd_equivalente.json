@@ -1,0 +1,106 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1"
+  ],
+  "estados": [
+    "A",
+    "B",
+    "BC",
+    "AB",
+    "ABC",
+    "emptyset"
+  ],
+  "inicial": "A",
+  "aceptacion": [
+    "BC",
+    "ABC"
+  ],
+  "transiciones": [
+    {
+      "desde": "A",
+      "lee": "0",
+      "hacia": [
+        "B"
+      ]
+    },
+    {
+      "desde": "A",
+      "lee": "1",
+      "hacia": [
+        "BC"
+      ]
+    },
+    {
+      "desde": "B",
+      "lee": "0",
+      "hacia": [
+        "AB"
+      ]
+    },
+    {
+      "desde": "B",
+      "lee": "1",
+      "hacia": [
+        "emptyset"
+      ]
+    },
+    {
+      "desde": "BC",
+      "lee": "0",
+      "hacia": [
+        "ABC"
+      ]
+    },
+    {
+      "desde": "BC",
+      "lee": "1",
+      "hacia": [
+        "emptyset"
+      ]
+    },
+    {
+      "desde": "AB",
+      "lee": "0",
+      "hacia": [
+        "AB"
+      ]
+    },
+    {
+      "desde": "AB",
+      "lee": "1",
+      "hacia": [
+        "BC"
+      ]
+    },
+    {
+      "desde": "ABC",
+      "lee": "0",
+      "hacia": [
+        "ABC"
+      ]
+    },
+    {
+      "desde": "ABC",
+      "lee": "1",
+      "hacia": [
+        "BC"
+      ]
+    },
+    {
+      "desde": "emptyset",
+      "lee": "0",
+      "hacia": [
+        "emptyset"
+      ]
+    },
+    {
+      "desde": "emptyset",
+      "lee": "1",
+      "hacia": [
+        "emptyset"
+      ]
+    }
+  ]
+}

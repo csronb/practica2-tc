@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>0</simbolo>
+    <simbolo>1</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="LLL_R" />
+    <estado nombre="LLL_A" aceptacion="true" />
+    <estado nombre="LLR_R" />
+    <estado nombre="LLR_A" aceptacion="true" />
+    <estado nombre="LRL_R" inicial="true" />
+    <estado nombre="LRL_A" aceptacion="true" />
+    <estado nombre="LRR_R" />
+    <estado nombre="LRR_A" aceptacion="true" />
+    <estado nombre="RLL_R" />
+    <estado nombre="RLL_A" aceptacion="true" />
+    <estado nombre="RLR_R" />
+    <estado nombre="RLR_A" aceptacion="true" />
+    <estado nombre="RRL_R" />
+    <estado nombre="RRL_A" aceptacion="true" />
+    <estado nombre="RRR_R" />
+    <estado nombre="RRR_A" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="LLL_R" lee="0" hacia="RLL_A" />
+    <transicion desde="LLL_R" lee="1" hacia="LRR_A" />
+    <transicion desde="LLL_A" lee="0" hacia="RLL_A" />
+    <transicion desde="LLL_A" lee="1" hacia="LRR_A" />
+    <transicion desde="LLR_R" lee="0" hacia="RLR_A" />
+    <transicion desde="LLR_R" lee="1" hacia="LRL_R" />
+    <transicion desde="LLR_A" lee="0" hacia="RLR_A" />
+    <transicion desde="LLR_A" lee="1" hacia="LRL_R" />
+    <transicion desde="LRL_R" lee="0" hacia="RRL_A" />
+    <transicion desde="LRL_R" lee="1" hacia="LLL_R" />
+    <transicion desde="LRL_A" lee="0" hacia="RRL_A" />
+    <transicion desde="LRL_A" lee="1" hacia="LLL_R" />
+    <transicion desde="LRR_R" lee="0" hacia="RRR_A" />
+    <transicion desde="LRR_R" lee="1" hacia="LLR_R" />
+    <transicion desde="LRR_A" lee="0" hacia="RRR_A" />
+    <transicion desde="LRR_A" lee="1" hacia="LLR_R" />
+    <transicion desde="RLL_R" lee="0" hacia="LLR_A" />
+    <transicion desde="RLL_R" lee="1" hacia="RRR_A" />
+    <transicion desde="RLL_A" lee="0" hacia="LLR_A" />
+    <transicion desde="RLL_A" lee="1" hacia="RRR_A" />
+    <transicion desde="RLR_R" lee="0" hacia="LLL_R" />
+    <transicion desde="RLR_R" lee="1" hacia="RRL_R" />
+    <transicion desde="RLR_A" lee="0" hacia="LLL_R" />
+    <transicion desde="RLR_A" lee="1" hacia="RRL_R" />
+    <transicion desde="RRL_R" lee="0" hacia="LRR_A" />
+    <transicion desde="RRL_R" lee="1" hacia="RLL_R" />
+    <transicion desde="RRL_A" lee="0" hacia="LRR_A" />
+    <transicion desde="RRL_A" lee="1" hacia="RLL_R" />
+    <transicion desde="RRR_R" lee="0" hacia="LRL_R" />
+    <transicion desde="RRR_R" lee="1" hacia="RLR_R" />
+    <transicion desde="RRR_A" lee="0" hacia="LRL_R" />
+    <transicion desde="RRR_A" lee="1" hacia="RLR_R" />
+  </transiciones>
+</automata>

@@ -1,0 +1,172 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "0",
+    "1",
+    "2"
+  ],
+  "estados": [
+    "q0_vacia",
+    "q1_ini0_fin0",
+    "q2_ini0_finNo0",
+    "q3_ini1_fin1",
+    "q4_ini1_finNo1",
+    "q5_ini2_fin2",
+    "q6_ini2_finNo2"
+  ],
+  "inicial": "q0_vacia",
+  "aceptacion": [
+    "q2_ini0_finNo0",
+    "q4_ini1_finNo1",
+    "q6_ini2_finNo2"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0_vacia",
+      "lee": "0",
+      "hacia": [
+        "q1_ini0_fin0"
+      ]
+    },
+    {
+      "desde": "q0_vacia",
+      "lee": "1",
+      "hacia": [
+        "q3_ini1_fin1"
+      ]
+    },
+    {
+      "desde": "q0_vacia",
+      "lee": "2",
+      "hacia": [
+        "q5_ini2_fin2"
+      ]
+    },
+    {
+      "desde": "q1_ini0_fin0",
+      "lee": "0",
+      "hacia": [
+        "q1_ini0_fin0"
+      ]
+    },
+    {
+      "desde": "q1_ini0_fin0",
+      "lee": "1",
+      "hacia": [
+        "q2_ini0_finNo0"
+      ]
+    },
+    {
+      "desde": "q1_ini0_fin0",
+      "lee": "2",
+      "hacia": [
+        "q2_ini0_finNo0"
+      ]
+    },
+    {
+      "desde": "q2_ini0_finNo0",
+      "lee": "0",
+      "hacia": [
+        "q1_ini0_fin0"
+      ]
+    },
+    {
+      "desde": "q2_ini0_finNo0",
+      "lee": "1",
+      "hacia": [
+        "q2_ini0_finNo0"
+      ]
+    },
+    {
+      "desde": "q2_ini0_finNo0",
+      "lee": "2",
+      "hacia": [
+        "q2_ini0_finNo0"
+      ]
+    },
+    {
+      "desde": "q3_ini1_fin1",
+      "lee": "0",
+      "hacia": [
+        "q4_ini1_finNo1"
+      ]
+    },
+    {
+      "desde": "q3_ini1_fin1",
+      "lee": "1",
+      "hacia": [
+        "q3_ini1_fin1"
+      ]
+    },
+    {
+      "desde": "q3_ini1_fin1",
+      "lee": "2",
+      "hacia": [
+        "q4_ini1_finNo1"
+      ]
+    },
+    {
+      "desde": "q4_ini1_finNo1",
+      "lee": "0",
+      "hacia": [
+        "q4_ini1_finNo1"
+      ]
+    },
+    {
+      "desde": "q4_ini1_finNo1",
+      "lee": "1",
+      "hacia": [
+        "q3_ini1_fin1"
+      ]
+    },
+    {
+      "desde": "q4_ini1_finNo1",
+      "lee": "2",
+      "hacia": [
+        "q4_ini1_finNo1"
+      ]
+    },
+    {
+      "desde": "q5_ini2_fin2",
+      "lee": "0",
+      "hacia": [
+        "q6_ini2_finNo2"
+      ]
+    },
+    {
+      "desde": "q5_ini2_fin2",
+      "lee": "1",
+      "hacia": [
+        "q6_ini2_finNo2"
+      ]
+    },
+    {
+      "desde": "q5_ini2_fin2",
+      "lee": "2",
+      "hacia": [
+        "q5_ini2_fin2"
+      ]
+    },
+    {
+      "desde": "q6_ini2_finNo2",
+      "lee": "0",
+      "hacia": [
+        "q6_ini2_finNo2"
+      ]
+    },
+    {
+      "desde": "q6_ini2_finNo2",
+      "lee": "1",
+      "hacia": [
+        "q6_ini2_finNo2"
+      ]
+    },
+    {
+      "desde": "q6_ini2_finNo2",
+      "lee": "2",
+      "hacia": [
+        "q5_ini2_fin2"
+      ]
+    }
+  ]
+}
