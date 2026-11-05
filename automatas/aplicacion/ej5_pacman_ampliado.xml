@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automata tipo="AFD">
+  <alfabeto>
+    <simbolo>s</simbolo>
+    <simbolo>l</simbolo>
+    <simbolo>p</simbolo>
+    <simbolo>t</simbolo>
+    <simbolo>e</simbolo>
+    <simbolo>b</simbolo>
+    <simbolo>w</simbolo>
+    <simbolo>c</simbolo>
+  </alfabeto>
+  <estados>
+    <estado nombre="q0_PenWait" inicial="true" />
+    <estado nombre="q1_Wander" />
+    <estado nombre="q2_ScatterCorner" />
+    <estado nombre="q3_Chase" />
+    <estado nombre="q4_Flee" />
+    <estado nombre="q5_ReturnEyes" />
+    <estado nombre="q6_ElroyVictory" aceptacion="true" />
+  </estados>
+  <transiciones>
+    <transicion desde="q0_PenWait" lee="t" hacia="q1_Wander" />
+    <transicion desde="q0_PenWait" lee="s" hacia="q0_PenWait" />
+    <transicion desde="q0_PenWait" lee="l" hacia="q0_PenWait" />
+    <transicion desde="q0_PenWait" lee="p" hacia="q0_PenWait" />
+    <transicion desde="q0_PenWait" lee="e" hacia="q0_PenWait" />
+    <transicion desde="q0_PenWait" lee="b" hacia="q0_PenWait" />
+    <transicion desde="q0_PenWait" lee="w" hacia="q2_ScatterCorner" />
+    <transicion desde="q0_PenWait" lee="c" hacia="q0_PenWait" />
+    <transicion desde="q1_Wander" lee="s" hacia="q3_Chase" />
+    <transicion desde="q1_Wander" lee="p" hacia="q4_Flee" />
+    <transicion desde="q1_Wander" lee="w" hacia="q2_ScatterCorner" />
+    <transicion desde="q1_Wander" lee="l" hacia="q1_Wander" />
+    <transicion desde="q1_Wander" lee="t" hacia="q1_Wander" />
+    <transicion desde="q1_Wander" lee="e" hacia="q1_Wander" />
+    <transicion desde="q1_Wander" lee="b" hacia="q1_Wander" />
+    <transicion desde="q1_Wander" lee="c" hacia="q3_Chase" />
+    <transicion desde="q2_ScatterCorner" lee="t" hacia="q1_Wander" />
+    <transicion desde="q2_ScatterCorner" lee="s" hacia="q3_Chase" />
+    <transicion desde="q2_ScatterCorner" lee="p" hacia="q4_Flee" />
+    <transicion desde="q2_ScatterCorner" lee="w" hacia="q2_ScatterCorner" />
+    <transicion desde="q2_ScatterCorner" lee="l" hacia="q2_ScatterCorner" />
+    <transicion desde="q2_ScatterCorner" lee="e" hacia="q2_ScatterCorner" />
+    <transicion desde="q2_ScatterCorner" lee="b" hacia="q2_ScatterCorner" />
+    <transicion desde="q2_ScatterCorner" lee="c" hacia="q3_Chase" />
+    <transicion desde="q3_Chase" lee="l" hacia="q1_Wander" />
+    <transicion desde="q3_Chase" lee="p" hacia="q4_Flee" />
+    <transicion desde="q3_Chase" lee="w" hacia="q2_ScatterCorner" />
+    <transicion desde="q3_Chase" lee="c" hacia="q6_ElroyVictory" />
+    <transicion desde="q3_Chase" lee="s" hacia="q3_Chase" />
+    <transicion desde="q3_Chase" lee="t" hacia="q3_Chase" />
+    <transicion desde="q3_Chase" lee="e" hacia="q3_Chase" />
+    <transicion desde="q3_Chase" lee="b" hacia="q3_Chase" />
+    <transicion desde="q4_Flee" lee="t" hacia="q1_Wander" />
+    <transicion desde="q4_Flee" lee="e" hacia="q5_ReturnEyes" />
+    <transicion desde="q4_Flee" lee="p" hacia="q4_Flee" />
+    <transicion desde="q4_Flee" lee="s" hacia="q4_Flee" />
+    <transicion desde="q4_Flee" lee="l" hacia="q4_Flee" />
+    <transicion desde="q4_Flee" lee="w" hacia="q4_Flee" />
+    <transicion desde="q4_Flee" lee="b" hacia="q4_Flee" />
+    <transicion desde="q4_Flee" lee="c" hacia="q4_Flee" />
+    <transicion desde="q5_ReturnEyes" lee="b" hacia="q0_PenWait" />
+    <transicion desde="q5_ReturnEyes" lee="s" hacia="q5_ReturnEyes" />
+    <transicion desde="q5_ReturnEyes" lee="l" hacia="q5_ReturnEyes" />
+    <transicion desde="q5_ReturnEyes" lee="p" hacia="q5_ReturnEyes" />
+    <transicion desde="q5_ReturnEyes" lee="t" hacia="q5_ReturnEyes" />
+    <transicion desde="q5_ReturnEyes" lee="e" hacia="q5_ReturnEyes" />
+    <transicion desde="q5_ReturnEyes" lee="w" hacia="q5_ReturnEyes" />
+    <transicion desde="q5_ReturnEyes" lee="c" hacia="q5_ReturnEyes" />
+    <transicion desde="q6_ElroyVictory" lee="p" hacia="q4_Flee" />
+    <transicion desde="q6_ElroyVictory" lee="s" hacia="q6_ElroyVictory" />
+    <transicion desde="q6_ElroyVictory" lee="l" hacia="q6_ElroyVictory" />
+    <transicion desde="q6_ElroyVictory" lee="t" hacia="q6_ElroyVictory" />
+    <transicion desde="q6_ElroyVictory" lee="e" hacia="q6_ElroyVictory" />
+    <transicion desde="q6_ElroyVictory" lee="b" hacia="q0_PenWait" />
+    <transicion desde="q6_ElroyVictory" lee="w" hacia="q6_ElroyVictory" />
+    <transicion desde="q6_ElroyVictory" lee="c" hacia="q6_ElroyVictory" />
+  </transiciones>
+</automata>

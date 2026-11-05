@@ -1,0 +1,420 @@
+{
+  "tipo": "AFD",
+  "alfabeto": [
+    "s",
+    "l",
+    "p",
+    "t",
+    "e",
+    "b",
+    "w",
+    "c"
+  ],
+  "estados": [
+    "q0_PenWait",
+    "q1_Wander",
+    "q2_ScatterCorner",
+    "q3_Chase",
+    "q4_Flee",
+    "q5_ReturnEyes",
+    "q6_ElroyVictory"
+  ],
+  "inicial": "q0_PenWait",
+  "aceptacion": [
+    "q6_ElroyVictory"
+  ],
+  "transiciones": [
+    {
+      "desde": "q0_PenWait",
+      "lee": "t",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "s",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "l",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "p",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "e",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "b",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "w",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q0_PenWait",
+      "lee": "c",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "s",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "p",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "w",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "l",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "t",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "e",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "b",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q1_Wander",
+      "lee": "c",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "t",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "s",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "p",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "w",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "l",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "e",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "b",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q2_ScatterCorner",
+      "lee": "c",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "l",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "p",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "w",
+      "hacia": [
+        "q2_ScatterCorner"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "c",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "s",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "t",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "e",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q3_Chase",
+      "lee": "b",
+      "hacia": [
+        "q3_Chase"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "t",
+      "hacia": [
+        "q1_Wander"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "e",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "p",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "s",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "l",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "w",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "b",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q4_Flee",
+      "lee": "c",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "b",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "s",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "l",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "p",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "t",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "e",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "w",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q5_ReturnEyes",
+      "lee": "c",
+      "hacia": [
+        "q5_ReturnEyes"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "p",
+      "hacia": [
+        "q4_Flee"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "s",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "l",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "t",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "e",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "b",
+      "hacia": [
+        "q0_PenWait"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "w",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    },
+    {
+      "desde": "q6_ElroyVictory",
+      "lee": "c",
+      "hacia": [
+        "q6_ElroyVictory"
+      ]
+    }
+  ]
+}
