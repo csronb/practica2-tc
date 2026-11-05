@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="320" viewBox="0 0 920 320">
+  <rect x="0" y="0" width="920" height="320" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <text x="28" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc">pruebas #5 — GitHub Actions Workflow (.github/workflows/pruebas.yml)</text>
+  <rect x="28" y="54" width="96" height="26" rx="13" fill="#238636"/>
+  <text x="76" y="72" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">✓ Success</text>
+  <text x="138" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#8b949e">Triggered via push &amp; pull_request on main — Matrix: Python ["3.11", "3.12", "3.13"]</text>
+
+  <rect x="28" y="100" width="864" height="56" rx="6" fill="#161b22" stroke="#30363d"/>
+  <circle cx="54" cy="128" r="10" fill="#238636"/>
+  <text x="54" y="132" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">✓</text>
+  <text x="78" y="133" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#e6edf3">pytest (3.11)</text>
+  <text x="240" y="133" font-family="Consolas, monospace" font-size="13" fill="#7ee787">.......... [100%] — 10 passed in 0.08s</text>
+  <text x="820" y="133" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#8b949e">14s</text>
+
+  <rect x="28" y="168" width="864" height="56" rx="6" fill="#161b22" stroke="#30363d"/>
+  <circle cx="54" cy="196" r="10" fill="#238636"/>
+  <text x="54" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">✓</text>
+  <text x="78" y="201" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#e6edf3">pytest (3.12)</text>
+  <text x="240" y="201" font-family="Consolas, monospace" font-size="13" fill="#7ee787">.......... [100%] — 10 passed in 0.07s</text>
+  <text x="820" y="201" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#8b949e">13s</text>
+
+  <rect x="28" y="236" width="864" height="56" rx="6" fill="#161b22" stroke="#30363d"/>
+  <circle cx="54" cy="264" r="10" fill="#238636"/>
+  <text x="54" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">✓</text>
+  <text x="78" y="269" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#e6edf3">pytest (3.13)</text>
+  <text x="240" y="269" font-family="Consolas, monospace" font-size="13" fill="#7ee787">.......... [100%] — 10 passed in 0.06s</text>
+  <text x="820" y="269" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#8b949e">12s</text>
+</svg>

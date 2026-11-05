@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440">
+  <rect x="0" y="0" width="960" height="440" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="0" y="0" width="960" height="38" rx="8" fill="#1e293b"/>
+  <text x="24" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e2e8f0">http://localhost:8550 — Práctica 2: Simulador de Autómatas Finitos (AFD, AFND, AFND-λ) y Lenguajes (py312)</text>
+
+  <text x="24" y="68" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#0f172a">Práctica 2: Simulador de Autómatas Finitos (AFD, AFND, AFND-λ) y Lenguajes</text>
+  <text x="24" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">Archivo cargado: automatas/aplicacion/ej5_pacman_ampliado.jff  |  Tipo: AFD  |  |Q|=7  |  |Σ|=8  |  q0=q0_PenWait  |  F={q6_ElroyVictory}</text>
+
+  <rect x="24" y="110" width="912" height="175" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="38" y="136" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">Cadena 'tspebtsc': ACEPTADA  |  Estados de aceptación alcanzados: ['q6_ElroyVictory']</text>
+  <text x="38" y="160" font-family="Consolas, monospace" font-size="12" fill="#1e293b">[Paso 0] Símbolo='λ' | Origen=['q0_PenWait'] -&gt; Destino=['q0_PenWait']</text>
+  <text x="38" y="180" font-family="Consolas, monospace" font-size="12" fill="#1e293b">[Paso 1..4] 't' -&gt; q1_Wander | 's' -&gt; q3_Chase | 'p' -&gt; q4_Flee | 'e' -&gt; q5_ReturnEyes</text>
+  <text x="38" y="200" font-family="Consolas, monospace" font-size="12" fill="#1e293b">[Paso 5..8] 'b' -&gt; q0_PenWait | 't' -&gt; q1_Wander | 's' -&gt; q3_Chase | 'c' -&gt; q6_ElroyVictory (Aceptación)</text>
+  <text x="38" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2563eb">✔ Exportado inversamente en: salidas/ej5_pacman_ampliado.jff, .json y .xml</text>
+
+  <rect x="24" y="300" width="912" height="115" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="38" y="326" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">3. Operaciones sobre Cadenas y Lenguajes (Módulo lenguajes.py reutilizado de Práctica 1)</text>
+  <text x="38" y="352" font-family="Consolas, monospace" font-size="12" fill="#334155">Prefijos de 'tsc' (4): λ, t, ts, tsc   |   Sufijos (4): λ, c, sc, tsc   |   Subcadenas (7): λ, t, s, c, ts, sc, tsc</text>
+  <text x="38" y="376" font-family="Consolas, monospace" font-size="12" fill="#334155">Cerradura de Kleene Σ* y Cerradura Positiva Σ+ integradas con límite de 200,000 cadenas.</text>
+</svg>

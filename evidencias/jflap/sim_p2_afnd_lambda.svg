@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300">
+  <rect x="0" y="0" width="920" height="300" rx="6" fill="#ece9d8" stroke="#0054e3" stroke-width="3"/>
+  <rect x="0" y="0" width="920" height="30" rx="4" fill="#0054e3"/>
+  <text x="14" y="20" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">JFLAP 7.1 — Step-by-Step &amp; NFA to DFA Conversion (ej199_afnd_lambda.jff)</text>
+  <rect x="14" y="42" width="892" height="170" fill="#ffffff" stroke="#aca899"/>
+  <text x="30" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#003399">AFND-λ Original (Ej. 199): Cl_λ(A) = {A, B, C, E}   |   Cadena probada: w = "011" → ACCEPTED en {D}</text>
+  <text x="30" y="106" font-family="Consolas, monospace" font-size="13" fill="#111111">Paso 0 (λ-clausura inicial): {A} --λ*--> {A, B, C, E}</text>
+  <text x="30" y="132" font-family="Consolas, monospace" font-size="13" fill="#111111">Paso 1 (lee '0'): δ({A,B,C,E}, 0) = {E} ⇒ Cl_λ({E}) = {E}</text>
+  <text x="30" y="158" font-family="Consolas, monospace" font-size="13" fill="#111111">Paso 2 (lee '1'): δ({E}, 1) = {D} ⇒ Cl_λ({D}) = {D*}</text>
+  <text x="30" y="184" font-family="Consolas, monospace" font-size="13" fill="#155724">Paso 3 (lee '1'): δ({D}, 1) = {D} ⇒ Cl_λ({D}) = {D*} ∈ F (Cadena Aceptada)</text>
+  <rect x="14" y="224" width="892" height="58" rx="4" fill="#d4edda" stroke="#155724"/>
+  <text x="30" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#155724">Conversión a AFD (Subconjuntos): 4 estados accesibles ({A,B,C,E}, {E}, {D}, ∅) frente a la cota 2^5 = 32.</text>
+  <text x="30" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#155724">Archivos generados: ej199_afnd_lambda_paso1_afnd (.jff/.json/.xml) y ej199_afnd_lambda_paso2_afd (.jff/.json/.xml)</text>
+</svg>
