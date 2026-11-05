@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="542" viewBox="0 0 980 542">
+  <rect x="0" y="0" width="980" height="542" rx="8" fill="#1e1e1e" stroke="#444444" stroke-width="2"/>
+  <rect x="0" y="0" width="980" height="32" rx="8" fill="#2d2d2d"/>
+  <text x="490" y="21" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#cccccc">practica2-tc — git log --oneline --graph --all</text>
+  <text x="20" y="58" font-family="Consolas, monospace" font-size="14" fill="#569cd6">$ git log --oneline --graph --all</text>
+  <text x="20" y="86" font-family="Consolas, monospace" font-size="12.5" fill="#dcdcaa">*   714aff1 Merge pull request #5 from csronb/feature/automata-aplicacion: automata Ejercicio 5 y pruebas</text>
+  <text x="20" y="107" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|\  </text>
+  <text x="20" y="128" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">| * 6ef8d02 feat(aplicacion): implementa automata ampliado de Pac-Man, propuesta de articulo y suite pytest</text>
+  <text x="20" y="149" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|/  </text>
+  <text x="20" y="170" font-family="Consolas, monospace" font-size="12.5" fill="#dcdcaa">*   bd60673 Merge pull request #4 from csronb/feature/simulacion-paso-a-paso: simulador interactivo Flet</text>
+  <text x="20" y="191" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|\  </text>
+  <text x="20" y="212" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">| * 0b15556 feat(simulador): desarrolla interfaz en Flet con tabla interactiva y simulacion paso a paso</text>
+  <text x="20" y="233" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|/  </text>
+  <text x="20" y="254" font-family="Consolas, monospace" font-size="12.5" fill="#dcdcaa">*   a583fb5 Merge pull request #3 from csronb/feature/exportar-json-xml: serializacion inversa en 3 formatos</text>
+  <text x="20" y="275" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|\  </text>
+  <text x="20" y="296" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">| * ff276f1 feat(formatos): implementa importacion y exportacion inversa en .jff, .json y .xml (Anexo 3)</text>
+  <text x="20" y="317" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|/  </text>
+  <text x="20" y="338" font-family="Consolas, monospace" font-size="12.5" fill="#dcdcaa">*   d5cd89f Merge pull request #2 from csronb/feature/importar-jff: cobertura completa JFLAP Listas 2 y 3</text>
+  <text x="20" y="359" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|\  </text>
+  <text x="20" y="380" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">| * 7f4c1f6 feat(jflap): completa cobertura de Listas 2 y 3 clasificadas en AFD, AFND, AFND-lambda y conversiones</text>
+  <text x="20" y="401" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|/  </text>
+  <text x="20" y="422" font-family="Consolas, monospace" font-size="12.5" fill="#dcdcaa">*   69d1925 Merge pull request #1 from csronb/feature/definicion-manual: nucleo de automatas e investigacion</text>
+  <text x="20" y="443" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|\  </text>
+  <text x="20" y="464" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">| * 935227c feat(automata): implementa clase AutomataFinito, lambda-clausura, conversiones e investigacion</text>
+  <text x="20" y="485" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">|/  </text>
+  <text x="20" y="506" font-family="Consolas, monospace" font-size="12.5" fill="#4ec9b0">* 824cd3f chore(entorno): reutiliza entorno y lenguajes.py de Practica 1 y configura GitHub Actions CI</text>
+</svg>

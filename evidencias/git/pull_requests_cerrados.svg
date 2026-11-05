@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="330" viewBox="0 0 920 330">
+  <rect x="0" y="0" width="920" height="330" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <text x="28" y="38" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc">Pull Requests — 5 Closed (Merged into main)</text>
+  <rect x="28" y="54" width="864" height="46" rx="4" fill="#161b22" stroke="#30363d"/>
+  <text x="44" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#a371f7">[Merged] #5</text>
+  <text x="145" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e6edf3">feature/automata-aplicacion — Modela e implementa autómata ampliado de Pac-Man y suite pytest</text>
+
+  <rect x="28" y="106" width="864" height="46" rx="4" fill="#161b22" stroke="#30363d"/>
+  <text x="44" y="134" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#a371f7">[Merged] #4</text>
+  <text x="145" y="134" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e6edf3">feature/simulacion-paso-a-paso — Desarrolla interfaz gráfica en Flet con simulación paso a paso</text>
+
+  <rect x="28" y="158" width="864" height="46" rx="4" fill="#161b22" stroke="#30363d"/>
+  <text x="44" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#a371f7">[Merged] #3</text>
+  <text x="145" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e6edf3">feature/exportar-json-xml — Implementa exportación e importación inversa en .json y .xml</text>
+
+  <rect x="28" y="210" width="864" height="46" rx="4" fill="#161b22" stroke="#30363d"/>
+  <text x="44" y="238" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#a371f7">[Merged] #2</text>
+  <text x="145" y="238" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e6edf3">feature/importar-jff — Implementa lector/escritor .jff y cobertura completa de Listas 2 y 3</text>
+
+  <rect x="28" y="262" width="864" height="46" rx="4" fill="#161b22" stroke="#30363d"/>
+  <text x="44" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#a371f7">[Merged] #1</text>
+  <text x="145" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e6edf3">feature/definicion-manual — Implementa clase AutomataFinito, λ-clausura y conversión a AFD</text>
+</svg>

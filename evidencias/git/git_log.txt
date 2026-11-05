@@ -1,0 +1,21 @@
+*   714aff1 Merge pull request #5 from csronb/feature/automata-aplicacion: automata Ejercicio 5 y pruebas
+|\  
+| * 6ef8d02 feat(aplicacion): implementa automata ampliado de Pac-Man, propuesta de articulo y suite pytest
+|/  
+*   bd60673 Merge pull request #4 from csronb/feature/simulacion-paso-a-paso: simulador interactivo Flet
+|\  
+| * 0b15556 feat(simulador): desarrolla interfaz en Flet con tabla interactiva y simulacion paso a paso
+|/  
+*   a583fb5 Merge pull request #3 from csronb/feature/exportar-json-xml: serializacion inversa en 3 formatos
+|\  
+| * ff276f1 feat(formatos): implementa importacion y exportacion inversa en .jff, .json y .xml (Anexo 3)
+|/  
+*   d5cd89f Merge pull request #2 from csronb/feature/importar-jff: cobertura completa JFLAP Listas 2 y 3
+|\  
+| * 7f4c1f6 feat(jflap): completa cobertura de Listas 2 y 3 clasificadas en AFD, AFND, AFND-lambda y conversiones
+|/  
+*   69d1925 Merge pull request #1 from csronb/feature/definicion-manual: nucleo de automatas e investigacion
+|\  
+| * 935227c feat(automata): implementa clase AutomataFinito, lambda-clausura, conversiones e investigacion
+|/  
+* 824cd3f chore(entorno): reutiliza entorno y lenguajes.py de Practica 1 y configura GitHub Actions CI
