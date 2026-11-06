@@ -1,23 +1,33 @@
-"""Aplicación interactiva en Flet para las Prácticas 1, 2 y 3:
-Simulador de Autómatas Finitos (AFD, AFND, AFND-λ), Transformaciones, Minimización y Lenguajes.
+"""Aplicación interactiva en Flet para las Prácticas 1, 2, 3 y 4:
+Simulador de Autómatas Finitos (AFD, AFND, AFND-λ), Transformaciones, Minimización,
+Conversión en Ambas Direcciones del Teorema de Kleene y Validadores de Expresiones Regulares.
 
-Cumple todos los requisitos acumulados de las tres prácticas:
+Cumple todos los requisitos acumulados de las cuatro prácticas:
 - Práctica 1: Operaciones sobre cadenas (`prefijos`, `sufijos`, `subcadenas`) y lenguajes (`Σ*`, `Σ+`).
 - Práctica 2: Definición interactiva de la quíntupla, importación y exportación inversa en
   `.jff`, `.json` y `.xml`, y simulación con traza y bifurcaciones.
 - Práctica 3 (Ejercicio 2):
-  * 2.1: Cálculo de la λ-clausura de cada estado (mostrando la del estado que el usuario seleccione)
-    y simulación directa de un AFN-λ mostrando en cada paso el conjunto de estados activos *antes*
-    y *después* de aplicar la λ-clausura.
-  * 2.2: Eliminación de transiciones λ (AFN-λ -> AFN) mostrando explícitamente las transiciones
-    añadidas y los estados que pasan a ser de aceptación.
-  * 2.3: Construcción de subconjuntos (AFN -> AFD) construyendo únicamente los subconjuntos
-    alcanzables desde el estado inicial, mostrando la tabla de transición conforme se genera e
-    indicando qué subconjuntos resultan de aceptación y por qué.
-  * 2.4: Minimización de AFD (eliminando estados inaccesibles y mostrando en cada ronda la
-    partición y la tabla de pares distinguibles) y decisión de equivalencia entre dos AFD.
-  * 2.5: Validación de cadenas por lotes desde un archivo `.txt` (una cadena por línea) y
-    guardado del reporte detallado en disco.
+  * 2.1: Cálculo de la λ-clausura de cada estado y simulación directa de un AFN-λ mostrando
+    en cada paso los estados activos *antes* y *después* de aplicar la λ-clausura.
+  * 2.2: Eliminación de transiciones λ (AFN-λ -> AFN).
+  * 2.3: Construcción de subconjuntos alcanzables (AFN -> AFD).
+  * 2.4: Minimización de AFD y decisión de equivalencia entre dos AFD.
+  * 2.5: Validación de cadenas por lotes desde archivo `.txt` y guardado de reporte.
+- Práctica 4 (Ejercicios 2, 3 y 4):
+  * Ejercicio 2 (De expresión regular a autómata): Analizador sintáctico con la notación del curso
+    (`+`, concatenación, `*`, `λ`, `∅`, paréntesis) que indica la posición exacta de cualquier error;
+    construcción paso a paso del AFN-λ (Kleene Parte I / Thompson); encadenamiento con eliminación
+    de λ, subconjuntos y minimización hasta obtener el AFD mínimo; exportación a `.jff` y validación
+    de cadenas contra la expresión.
+  * Ejercicio 3 (De autómata a expresión regular): Importación de un AFD desde `.jff` verificando
+    que sea determinista (indicando qué estado y qué símbolo lo impiden en caso contrario);
+    obtención de la expresión regular por eliminación de estados mostrando el GNFA después de cada
+    estado eliminado; y comparación de equivalencia con la expresión de JFLAP de la Práctica 3
+    mediante sus AFD mínimos.
+  * Ejercicio 4 (Aplicaciones: validadores): Cuatro validadores (correo electrónico, teléfono
+    nacional, URL y fecha en distintos formatos) con su expresión en la notación del curso, su
+    traducción al módulo `re` de Python, el conteo de estados del AFD antes y después de minimizar,
+    su justificación normativa y validación interactiva de texto.
 """
 
 from __future__ import annotations
@@ -25,21 +35,70 @@ from __future__ import annotations
 from pathlib import Path
 import flet as ft
 
-from automata import AutomataFinito, ResultadoSimulacion
-from formatos import (
-    cargar_automata,
-    guardar_en_tres_formatos,
-)
-from lenguajes import (
-    LIMITE_CADENAS,
-    cerradura_kleene,
-    cerradura_positiva,
-    formatear_cadena,
-    normalizar_alfabeto,
-    prefijos,
-    subcadenas,
-    sufijos,
-)
+try:
+    from automata import AutomataFinito, ResultadoSimulacion
+    from expresiones import (
+        CLASES_PREDEFINIDAS,
+        ErrorSintaxisER,
+        ResultadoEliminacionEstados,
+        ResultadoERaAutomata,
+        comparar_expresiones_por_afd_minimo,
+        eliminacion_de_estados_detallada,
+        er_a_automata_completo,
+    )
+    from formatos import (
+        cargar_automata,
+        guardar_automata,
+        guardar_en_tres_formatos,
+    )
+    from lenguajes import (
+        LIMITE_CADENAS,
+        cerradura_kleene,
+        cerradura_positiva,
+        formatear_cadena,
+        normalizar_alfabeto,
+        prefijos,
+        subcadenas,
+        sufijos,
+    )
+    from validadores import (
+        DECLARACION_CLASES_CURSO,
+        ESPECIFICACIONES_VALIDADORES,
+        obtener_validador,
+        verificar_congruencia_validador,
+    )
+except ImportError:  # pragma: no cover
+    from src.automata import AutomataFinito, ResultadoSimulacion
+    from src.expresiones import (
+        CLASES_PREDEFINIDAS,
+        ErrorSintaxisER,
+        ResultadoEliminacionEstados,
+        ResultadoERaAutomata,
+        comparar_expresiones_por_afd_minimo,
+        eliminacion_de_estados_detallada,
+        er_a_automata_completo,
+    )
+    from src.formatos import (
+        cargar_automata,
+        guardar_automata,
+        guardar_en_tres_formatos,
+    )
+    from src.lenguajes import (
+        LIMITE_CADENAS,
+        cerradura_kleene,
+        cerradura_positiva,
+        formatear_cadena,
+        normalizar_alfabeto,
+        prefijos,
+        subcadenas,
+        sufijos,
+    )
+    from src.validadores import (
+        DECLARACION_CLASES_CURSO,
+        ESPECIFICACIONES_VALIDADORES,
+        obtener_validador,
+        verificar_congruencia_validador,
+    )
 
 DIR_EXPORT = Path("salidas")
 
@@ -510,15 +569,443 @@ def main(page: ft.Page) -> None:
         )
         page.update()
 
+    # =========================================================================
+    # 6. PRÁCTICA 4 — EJERCICIO 2: DE EXPRESIÓN REGULAR A AUTÓMATA (KLEENE I)
+    # =========================================================================
+    estado_p4_ej2: dict[str, object] = {
+        "resultado": None,
+        "paso_kleene_idx": 0,
+    }
+
+    casos_ej2_opciones = [
+        ("241", "0 + 1", "0, 1", "Lista 3 - Ej. 241: 0 + 1"),
+        ("242", "0* + 1", "0, 1", "Lista 3 - Ej. 242: 0* + 1"),
+        ("243", "(0 + 1)*", "0, 1", "Lista 3 - Ej. 243: (0 + 1)*"),
+        ("244", "0(0 + 1)", "0, 1", "Lista 3 - Ej. 244: 0(0 + 1)"),
+        ("245", "0(0 + 1)*", "0, 1", "Lista 3 - Ej. 245: 0(0 + 1)*"),
+        ("246", "0*(0 + 1)", "0, 1", "Lista 3 - Ej. 246: 0*(0 + 1)"),
+        ("247", "(01)* + 1*", "0, 1", "Lista 3 - Ej. 247: (01)* + 1*"),
+        ("248", "(0* + 1)0", "0, 1", "Lista 3 - Ej. 248: (0* + 1)0"),
+        ("249", "(0* + 1)0*", "0, 1", "Lista 3 - Ej. 249: (0* + 1)0*"),
+        ("250", "0*1* + 1*0", "0, 1", "Lista 3 - Ej. 250: 0*1* + 1*0"),
+        ("251", "(0 + 1*)0 + 1*1", "0, 1", "Lista 3 - Ej. 251: (0 + 1*)0 + 1*1"),
+        ("252", "(0 + 1)*(00 + 11) + (00 + 11)(0 + 1)*", "0, 1", "Lista 3 - Ej. 252: (0+1)*(00+11)+(00+11)(0+1)*"),
+        ("253", "(0 + (11 + 00)*)(11 + 10 + 01)*(λ + 110)", "0, 1", "Lista 3 - Ej. 253: (0+(11+00)*)(11+10+01)*(λ+110)"),
+        ("272a", "a + b*", "a, b", "Lista 4 - Ej. 272(a): a + b*"),
+        ("272b", "(ab)*a", "a, b", "Lista 4 - Ej. 272(b)/273: (ab)*a"),
+        ("272c", "(a + b)*abb", "a, b", "Lista 4 - Ej. 272(c)/273: (a + b)*abb"),
+        ("272d", "a(ba)* + b", "a, b", "Lista 4 - Ej. 272(d): a(ba)* + b"),
+        ("272e", "(a + λ)(b + ∅)", "a, b", "Lista 4 - Ej. 272(e): (a + λ)(b + ∅)"),
+        ("278", "(a + b)*b", "a, b", "Lista 4 - Ej. 278: (a + b)*b"),
+    ]
+    mapa_casos_ej2 = {k: (er, alf) for k, er, alf, _ in casos_ej2_opciones}
+
+    dd_casos_ej2 = ft.Dropdown(
+        label="Caso de prueba (Lista 3: 241–253 / Lista 4: 272, 273, 278)",
+        width=420,
+        options=[ft.dropdown.Option(k, etiq) for k, _, _, etiq in casos_ej2_opciones],
+        value="278",
+    )
+    tf_er_ej2 = ft.TextField(
+        label="Expresión regular (notación del curso: +, concatenación, *, λ, ∅, paréntesis)",
+        value="(a + b)*b",
+        width=480,
+    )
+    tf_alf_ej2 = ft.TextField(label="Alfabeto Σ (opcional)", value="a, b", width=160)
+    cb_clases_ej2 = ft.Checkbox(label="Activar clases declaradas (D, N, P, L, A, U, R, T, C)", value=False)
+    txt_estado_ej2 = ft.Text(weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_900)
+    txt_paso_kleene_ej2 = ft.Text(weight=ft.FontWeight.BOLD, color=ft.Colors.INDIGO_900)
+    md_detalle_ej2 = ft.Markdown(value="", selectable=True)
+
+    tf_cadena_ej2 = ft.TextField(
+        label="Cadena(s) a validar contra la expresión (separadas por coma; ej. 273: aba, ab, babb, abab)",
+        value="aba, ab, babb, abab",
+        width=520,
+    )
+    txt_validacion_ej2 = ft.Text(weight=ft.FontWeight.BOLD, color=ft.Colors.GREEN_900)
+
+    def _tabla_md_compacta(aut: AutomataFinito) -> str:
+        cols = list(aut.alfabeto) + (["λ"] if aut.tiene_transiciones_lambda else [])
+        enc = "| Estado | " + " | ".join(f"`{c}`" for c in cols) + " |\n"
+        sep = "| :--- | " + " | ".join(":---:" for _ in cols) + " |\n"
+        filas = []
+        for q in aut.estados:
+            pref = ("→ " if q == aut.inicial else "") + ("* " if q in aut.aceptacion else "")
+            celdas = []
+            for c in cols:
+                sym = "" if c == "λ" else c
+                d = aut.destinos(q, sym)
+                celdas.append("{" + ", ".join(d) + "}" if d else "∅")
+            filas.append(f"| {pref}**{q}** | " + " | ".join(celdas) + " |")
+        return enc + sep + "\n".join(filas)
+
+    def actualizar_vista_paso_kleene_ej2() -> None:
+        res: ResultadoERaAutomata | None = estado_p4_ej2["resultado"]  # type: ignore[assignment]
+        if res is None or not res.kleene_uno.pasos:
+            txt_paso_kleene_ej2.value = "Construya primero una expresión regular válida."
+            md_detalle_ej2.value = ""
+            return
+        pasos = res.kleene_uno.pasos
+        idx = max(0, min(int(estado_p4_ej2["paso_kleene_idx"]), len(pasos) - 1))  # type: ignore[arg-type]
+        estado_p4_ej2["paso_kleene_idx"] = idx
+        p = pasos[idx]
+        txt_paso_kleene_ej2.value = (
+            f"Pieza parcial {p.numero_paso}/{len(pasos)} — [{p.operacion}] Subexpresión: `{p.subexpresion}` "
+            f"(ini={p.estado_inicial}, fin={p.estado_final}, |Q|={len(p.automata_parcial.estados)})"
+        )
+        lineas = [
+            f"### Resumen de la tubería completa (Ejercicio 2) para `{res.kleene_uno.expresion_normalizada}`",
+            f"- **Expresión analizada**: `{res.kleene_uno.expresion_normalizada}`  |  **Traducción `re` Python**: `{res.kleene_uno.regex_python}`",
+            f"- **1) AFN-λ (Teorema de Kleene I / Thompson)**: `{len(res.afn_lambda.estados)}` estados (`q0={res.afn_lambda.inicial}`, `F={res.afn_lambda.aceptacion}`)",
+            f"- **2) AFN sin transiciones λ (Práctica 3, 2.2)**: `{len(res.afn.estados)}` estados (`F={res.afn.aceptacion}`)",
+            f"- **3) AFD por Construcción de Subconjuntos (Práctica 3, 2.3)**: `{len(res.afd.estados)}` estados alcanzables (`Q={res.afd.estados}`)",
+            f"- **4) AFD Mínimo (Práctica 3, 2.4)**: `{len(res.afd_minimo.estados)}` estados (`Q={res.afd_minimo.estados}`, `F={res.afd_minimo.aceptacion}`)",
+            "",
+            f"### Pieza parcial {p.numero_paso} de {len(pasos)}: {p.operacion} sobre `{p.subexpresion}`",
+            f"- {p.descripcion}",
+            _tabla_md_compacta(p.automata_parcial),
+            "",
+            "### Tabla de transición del AFD Mínimo resultante",
+            _tabla_md_compacta(res.afd_minimo),
+        ]
+        md_detalle_ej2.value = "\n".join(lineas)
+
+    def construir_er_a_automata_ui(e: ft.ControlEvent | None = None) -> None:
+        expr = (tf_er_ej2.value or "").strip()
+        alf_raw = normalizar_alfabeto((tf_alf_ej2.value or "").split(","))
+        clases = CLASES_PREDEFINIDAS if cb_clases_ej2.value else None
+        try:
+            res = er_a_automata_completo(expr, alfabeto=alf_raw or None, clases=clases)
+            estado_p4_ej2["resultado"] = res
+            estado_p4_ej2["paso_kleene_idx"] = len(res.kleene_uno.pasos) - 1
+            txt_estado_ej2.color = ft.Colors.GREEN_900
+            txt_estado_ej2.value = (
+                f"Conversión exitosa: AFN-λ ({len(res.afn_lambda.estados)} estados, {len(res.kleene_uno.pasos)} piezas) "
+                f"→ AFN ({len(res.afn.estados)} estados) → AFD ({len(res.afd.estados)} estados) "
+                f"→ AFD mínimo ({len(res.afd_minimo.estados)} estados)."
+            )
+            actualizar_vista_paso_kleene_ej2()
+            validar_cadenas_ej2_ui()
+        except ErrorSintaxisER as err_sint:
+            estado_p4_ej2["resultado"] = None
+            txt_estado_ej2.color = ft.Colors.RED_800
+            txt_estado_ej2.value = f"Expresión rechazada en la posición {err_sint.posicion}: {err_sint.detalle}"
+            txt_paso_kleene_ej2.value = f"Posición exacta del error: carácter #{err_sint.posicion}"
+            md_detalle_ej2.value = f"```text\n{err_sint}\n```"
+        except Exception as err:
+            txt_estado_ej2.color = ft.Colors.RED_800
+            txt_estado_ej2.value = f"Error al construir autómata: {err}"
+        page.update()
+
+    def paso_kleene_anterior_ui(e: ft.ControlEvent) -> None:
+        if estado_p4_ej2["resultado"] is not None:
+            estado_p4_ej2["paso_kleene_idx"] = max(0, int(estado_p4_ej2["paso_kleene_idx"]) - 1)  # type: ignore[arg-type]
+            actualizar_vista_paso_kleene_ej2()
+            page.update()
+
+    def paso_kleene_siguiente_ui(e: ft.ControlEvent) -> None:
+        res: ResultadoERaAutomata | None = estado_p4_ej2["resultado"]  # type: ignore[assignment]
+        if res is not None:
+            estado_p4_ej2["paso_kleene_idx"] = min(
+                len(res.kleene_uno.pasos) - 1, int(estado_p4_ej2["paso_kleene_idx"]) + 1  # type: ignore[arg-type]
+            )
+            actualizar_vista_paso_kleene_ej2()
+            page.update()
+
+    def exportar_jff_ej2_ui(e: ft.ControlEvent) -> None:
+        res: ResultadoERaAutomata | None = estado_p4_ej2["resultado"]  # type: ignore[assignment]
+        if res is None:
+            txt_estado_ej2.value = "Construya primero una expresión regular antes de exportar a .jff."
+            page.update()
+            return
+        DIR_EXPORT.mkdir(parents=True, exist_ok=True)
+        r1 = guardar_automata(res.afn_lambda, DIR_EXPORT / "ej2_afn_lambda.jff")
+        r2 = guardar_automata(res.afn, DIR_EXPORT / "ej2_afn_sin_lambda.jff")
+        r3 = guardar_automata(res.afd, DIR_EXPORT / "ej2_afd_subconjuntos.jff")
+        r4 = guardar_automata(res.afd_minimo, DIR_EXPORT / "ej2_afd_minimo.jff")
+        estado_actual["automata"] = res.afd_minimo
+        sincronizar_controles_desde_automata(res.afd_minimo)
+        txt_estado_ej2.value = (
+            f"Exportados en .jff: {r1.as_posix()}, {r2.as_posix()}, {r3.as_posix()} y {r4.as_posix()} "
+            "(AFD mínimo cargado en el editor principal)."
+        )
+        page.update()
+
+    def validar_cadenas_ej2_ui(e: ft.ControlEvent | None = None) -> None:
+        res: ResultadoERaAutomata | None = estado_p4_ej2["resultado"]  # type: ignore[assignment]
+        if res is None:
+            txt_validacion_ej2.value = "Construya primero el autómata de la expresión regular."
+            page.update()
+            return
+        partes = [p.strip() for p in (tf_cadena_ej2.value or "").split(",")]
+        if not partes:
+            partes = [""]
+        resumenes = []
+        for cad_raw in partes:
+            cad = "" if cad_raw in ("λ", "lambda", "epsilon", "ε") else cad_raw
+            mostrada = "λ" if cad == "" else cad
+            sim_lambda = res.afn_lambda.simular(cad)
+            ok_min = res.afd_minimo.acepta(cad)
+            veredicto = "ACEPTADA" if ok_min else "RECHAZADA"
+            resumenes.append(
+                f"'{mostrada}': {veredicto} (AFN-λ activos finales={sim_lambda.pasos[-1].estados_despues_de_lambda}, AFD_min={ok_min})"
+            )
+        txt_validacion_ej2.value = "  |  ".join(resumenes)
+        page.update()
+
+    def seleccionar_caso_ej2_ui(e: ft.ControlEvent) -> None:
+        k = dd_casos_ej2.value
+        if k and k in mapa_casos_ej2:
+            er_str, alf_str = mapa_casos_ej2[k]
+            tf_er_ej2.value = er_str
+            tf_alf_ej2.value = alf_str
+            construir_er_a_automata_ui()
+
+    dd_casos_ej2.on_change = seleccionar_caso_ej2_ui
+
+    # =========================================================================
+    # 7. PRÁCTICA 4 — EJERCICIO 3: DE AUTÓMATA A EXPRESIÓN REGULAR (GNFA)
+    # =========================================================================
+    estado_p4_ej3: dict[str, object] = {
+        "resultado_gnfa": None,
+        "paso_gnfa_idx": 0,
+    }
+
+    casos_ej3_opciones = [
+        ("automatas/practica4/afd-a-er/ej254_termina_en_1.jff", "0*1(1+00*1)*", "Lista 3 / Prác. 3 - Ej. 254 (termina en 1)"),
+        ("automatas/practica4/afd-a-er/ej255_ciclo_par_b.jff", "((0+1)1*0)*", "Lista 3 / Prác. 3 - Ej. 255 (ciclo par en B)"),
+        ("automatas/practica4/afd-a-er/ej256_ternario.jff", "(1+2)*0(0+1+2(1+2)*0)*", "Lista 3 / Prác. 3 - Ej. 256 (alfabeto {0,1,2})"),
+        ("automatas/practica4/afd-a-er/ej257_tres_estados_bc.jff", "((1+01*0)(0+1))*01*+((1+01*0)(0+1))*(1+01*0)", "Lista 3 / Prác. 3 - Ej. 257 (finales B y C)"),
+        ("automatas/practica4/afd-a-er/ej258_tres_estados_c.jff", "(0+1)(01+(1+00)(0+1))*", "Lista 3 / Prác. 3 - Ej. 258 (final C)"),
+        ("automatas/practica4/afd-a-er/ej276_multiplo_3_a.jff", "(b+ab*ab*a)*", "Lista 4 - Ej. 276 (número de 'a' múltiplo de 3)"),
+        ("automatas/practica4/afd-a-er/ej277_termina_en_1.jff", "0*1(1+00*1)*", "Lista 4 - Ej. 277 (termina en 1 sobre {0,1})"),
+        ("automatas/practica3/casos-de-prueba/ej196_afnd_lambda.jff", "", "Prueba negativa no determinista: Ej. 196 (AFN-λ)"),
+    ]
+    mapa_casos_ej3 = {ruta: er_ref for ruta, er_ref, _ in casos_ej3_opciones}
+
+    dd_casos_ej3 = ft.Dropdown(
+        label="Seleccionar archivo .jff (Lista 3: 254–258, Lista 4: 276–277)",
+        width=450,
+        options=[ft.dropdown.Option(r, etiq) for r, _, etiq in casos_ej3_opciones],
+        value="automatas/practica4/afd-a-er/ej276_multiplo_3_a.jff",
+    )
+    tf_ruta_jff_ej3 = ft.TextField(
+        label="Ruta del archivo .jff a importar para eliminación de estados",
+        value="automatas/practica4/afd-a-er/ej276_multiplo_3_a.jff",
+        width=440,
+    )
+    tf_er_jflap_ej3 = ft.TextField(
+        label="Expresión de referencia (ej. JFLAP Práctica 3) para probar equivalencia con Ejercicio 2",
+        value="(b+ab*ab*a)*",
+        width=460,
+    )
+    txt_verif_afd_ej3 = ft.Text(weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_900)
+    txt_paso_gnfa_ej3 = ft.Text(weight=ft.FontWeight.BOLD, color=ft.Colors.INDIGO_900)
+    md_gnfa_ej3 = ft.Markdown(value="", selectable=True)
+
+    def actualizar_vista_gnfa_ej3() -> None:
+        res_g: ResultadoEliminacionEstados | None = estado_p4_ej3["resultado_gnfa"]  # type: ignore[assignment]
+        if res_g is None or not res_g.pasos_gnfa:
+            return
+        pasos = res_g.pasos_gnfa
+        idx = max(0, min(int(estado_p4_ej3["paso_gnfa_idx"]), len(pasos) - 1))  # type: ignore[arg-type]
+        estado_p4_ej3["paso_gnfa_idx"] = idx
+        pg = pasos[idx]
+        txt_paso_gnfa_ej3.value = (
+            f"GNFA paso {pg.numero_paso}/{len(pasos) - 1} — "
+            + (f"Estado eliminado: '{pg.estado_eliminado}' (bucle={pg.expresion_bucle})" if pg.estado_eliminado else "GNFA inicial")
+            + f"  |  Expresión final obtenida: `{res_g.expresion_texto}`"
+        )
+        lineas = [
+            f"### Expresión regular obtenida por Eliminación de Estados: `{res_g.expresion_texto}`",
+            f"- **Orden de eliminación de estados**: `{res_g.orden_eliminacion}`",
+            f"- **{pg.resumen_paso}**",
+            "",
+            f"#### Matriz de transiciones generalizadas del GNFA (Paso {pg.numero_paso})",
+            pg.tabla_markdown,
+        ]
+        er_ref = (tf_er_jflap_ej3.value or "").strip()
+        if er_ref:
+            try:
+                comp = comparar_expresiones_por_afd_minimo(
+                    res_g.expresion_texto,
+                    er_ref,
+                    alfabeto=res_g.afd_origen.alfabeto,
+                )
+                lineas.extend(
+                    [
+                        "",
+                        "### Comparación de equivalencia con la expresión de JFLAP / Referencia (vía Ejercicio 2 + Práctica 3)",
+                        f"- **Expresión 1 (Eliminación de estados)**: `{comp.expresion_1}` → AFD mínimo de `{len(comp.tuberia_1.afd_minimo.estados)}` estados",
+                        f"- **Expresión 2 (JFLAP / Referencia)**: `{comp.expresion_2}` → AFD mínimo de `{len(comp.tuberia_2.afd_minimo.estados)}` estados",
+                        f"- **Resultado de equivalencia (`son_afd_equivalentes`)**: **{'EQUIVALENTES' if comp.equivalentes else 'NO EQUIVALENTES'}** — {comp.equivalencia_afd.justificacion}",
+                    ]
+                )
+            except Exception as err_eq:
+                lineas.append(f"\n- *Aviso al comparar con expresión de referencia*: {err_eq}")
+        md_gnfa_ej3.value = "\n".join(lineas)
+
+    def ejecutar_afd_a_er_ui(e: ft.ControlEvent | None = None) -> None:
+        ruta = (tf_ruta_jff_ej3.value or "").strip()
+        try:
+            aut = cargar_automata(ruta)
+            verif = aut.verificar_determinismo()
+            if not verif.es_determinista:
+                estado_p4_ej3["resultado_gnfa"] = None
+                txt_verif_afd_ej3.color = ft.Colors.RED_800
+                txt_verif_afd_ej3.value = verif.mensaje
+                txt_paso_gnfa_ej3.value = (
+                    f"Conversión detenida: estado '{verif.primer_estado_conflicto}' con símbolo "
+                    f"'{verif.primer_simbolo_conflicto}' impide el determinismo."
+                )
+                md_gnfa_ej3.value = (
+                    "### Verificación de Determinismo Fallida\n"
+                    + "\n".join(f"- **{v.motivo}**" for v in verif.violaciones)
+                )
+                page.update()
+                return
+
+            res_g = eliminacion_de_estados_detallada(aut)
+            estado_p4_ej3["resultado_gnfa"] = res_g
+            estado_p4_ej3["paso_gnfa_idx"] = len(res_g.pasos_gnfa) - 1
+            txt_verif_afd_ej3.color = ft.Colors.GREEN_900
+            txt_verif_afd_ej3.value = (
+                f"{verif.mensaje}  |  Expresión regular obtenida: {res_g.expresion_texto}"
+            )
+            actualizar_vista_gnfa_ej3()
+        except Exception as err:
+            txt_verif_afd_ej3.color = ft.Colors.RED_800
+            txt_verif_afd_ej3.value = f"Error en Ejercicio 3: {err}"
+        page.update()
+
+    def paso_gnfa_anterior_ui(e: ft.ControlEvent) -> None:
+        if estado_p4_ej3["resultado_gnfa"] is not None:
+            estado_p4_ej3["paso_gnfa_idx"] = max(0, int(estado_p4_ej3["paso_gnfa_idx"]) - 1)  # type: ignore[arg-type]
+            actualizar_vista_gnfa_ej3()
+            page.update()
+
+    def paso_gnfa_siguiente_ui(e: ft.ControlEvent) -> None:
+        res_g: ResultadoEliminacionEstados | None = estado_p4_ej3["resultado_gnfa"]  # type: ignore[assignment]
+        if res_g is not None:
+            estado_p4_ej3["paso_gnfa_idx"] = min(
+                len(res_g.pasos_gnfa) - 1, int(estado_p4_ej3["paso_gnfa_idx"]) + 1  # type: ignore[arg-type]
+            )
+            actualizar_vista_gnfa_ej3()
+            page.update()
+
+    def seleccionar_caso_ej3_ui(e: ft.ControlEvent) -> None:
+        r = dd_casos_ej3.value
+        if r:
+            tf_ruta_jff_ej3.value = r
+            tf_er_jflap_ej3.value = mapa_casos_ej3.get(r, "")
+            ejecutar_afd_a_er_ui()
+
+    dd_casos_ej3.on_change = seleccionar_caso_ej3_ui
+
+    # =========================================================================
+    # 8. PRÁCTICA 4 — EJERCICIO 4: APLICACIONES — VALIDADORES
+    # =========================================================================
+    dd_validador_ej4 = ft.Dropdown(
+        label="Seleccionar validador (Ejercicio 4)",
+        width=460,
+        options=[
+            ft.dropdown.Option(k, esp.titulo)
+            for k, esp in ESPECIFICACIONES_VALIDADORES.items()
+        ],
+        value="correo",
+    )
+    tf_texto_ej4 = ft.TextField(
+        label="Texto a validar con el autómata obtenido en el Ejercicio 2",
+        value="cesar.navarro@alumno.ipn.mx",
+        width=460,
+    )
+    dd_ejemplos_ej4 = ft.Dropdown(label="Cargar ejemplo de prueba rápido", width=360)
+    txt_resultado_ej4 = ft.Text(weight=ft.FontWeight.BOLD, size=15, color=ft.Colors.GREEN_900)
+    md_ficha_ej4 = ft.Markdown(value="", selectable=True)
+
+    def actualizar_ficha_validador_ej4(ejecutar_congruencia: bool = False) -> None:
+        clave = dd_validador_ej4.value or "correo"
+        val = obtener_validador(clave)
+        esp = val.especificacion
+
+        opciones_ej = [
+            ft.dropdown.Option(ej, f"[Válido] {ej}") for ej in esp.ejemplos_validos
+        ] + [
+            ft.dropdown.Option(ej, f"[Inválido] {ej}") for ej in esp.ejemplos_invalidos
+        ]
+        dd_ejemplos_ej4.options = opciones_ej
+
+        res_val = val.validar(tf_texto_ej4.value or "")
+        txt_resultado_ej4.color = ft.Colors.GREEN_900 if res_val.aceptada_automata else ft.Colors.RED_800
+        txt_resultado_ej4.value = res_val.detalle
+
+        clases_doc = [
+            f"  - `{c} = {DECLARACION_CLASES_CURSO[c].definicion_curso}` (`{DECLARACION_CLASES_CURSO[c].equivalente_regex_python}` — {DECLARACION_CLASES_CURSO[c].descripcion})"
+            for c in esp.clases_empleadas
+            if c in DECLARACION_CLASES_CURSO
+        ]
+        linea_cong = ""
+        if ejecutar_congruencia:
+            cong = verificar_congruencia_validador(clave, total=500, semilla=2026)
+            linea_cong = (
+                f"\n- **Prueba de congruencia sobre {cong.total_cadenas} cadenas ({cong.total_validas} válidas + "
+                f"{cong.total_invalidas} inválidas)**: Coincidencias AFD mínimo vs `re.fullmatch` = "
+                f"**{cong.coincidencias_afd_minimo_vs_re}/{cong.total_cadenas}** (`congruente={cong.congruente}`)."
+            )
+
+        md_ficha_ej4.value = "\n".join(
+            [
+                f"### {esp.titulo}",
+                f"- **Expresión en la notación del curso**: `{esp.expresion_curso}`",
+                f"- **Traducción a la sintaxis del módulo `re` de Python**: `{val.regex_python}`",
+                "- **Clases de símbolos declaradas**:",
+                *clases_doc,
+                f"- **Autómata del Ejercicio 2**: AFN-λ = `{len(val.afn_lambda.estados)}` estados  |  "
+                f"**AFD antes de minimizar = `{val.estados_afd_antes_minimizar}` estados**  |  "
+                f"**AFD después de minimizar = `{val.estados_afd_despues_minimizar}` estados**"
+                + linea_cong,
+                f"- **Norma o estándar consultado**: {esp.norma_consultada}",
+                f"- **Casos válidos cubiertos**: {esp.casos_validos_cubiertos}",
+                f"- **Justificación de casos válidos o inválidos que quedan fuera de la expresión**: {esp.casos_fuera_de_la_expresion}",
+            ]
+        )
+
+    def cambiar_validador_ej4_ui(e: ft.ControlEvent) -> None:
+        clave = dd_validador_ej4.value or "correo"
+        esp = ESPECIFICACIONES_VALIDADORES[clave]
+        if esp.ejemplos_validos:
+            tf_texto_ej4.value = esp.ejemplos_validos[0]
+        actualizar_ficha_validador_ej4(ejecutar_congruencia=False)
+        page.update()
+
+    def elegir_ejemplo_ej4_ui(e: ft.ControlEvent) -> None:
+        if dd_ejemplos_ej4.value is not None:
+            tf_texto_ej4.value = dd_ejemplos_ej4.value
+            actualizar_ficha_validador_ej4(ejecutar_congruencia=False)
+            page.update()
+
+    def validar_texto_ej4_ui(e: ft.ControlEvent) -> None:
+        actualizar_ficha_validador_ej4(ejecutar_congruencia=False)
+        page.update()
+
+    def probar_500_cadenas_ej4_ui(e: ft.ControlEvent) -> None:
+        actualizar_ficha_validador_ej4(ejecutar_congruencia=True)
+        page.update()
+
+    dd_validador_ej4.on_change = cambiar_validador_ej4_ui
+    dd_ejemplos_ej4.on_change = elegir_ejemplo_ej4_ui
+
+    page.title = "Práctica 4 - Expresiones Regulares, Teorema de Kleene (Ambas Direcciones) y Validadores"
+
     # Construcción visual de la interfaz
     page.add(
         ft.Text(
-            "Práctica 3: Simulador de AFD, AFN, AFN-λ, Construcción de Subconjuntos y Minimización",
+            "Práctica 4: Uso de las Expresiones Regulares y Extensión de Software para Convertir Expresiones Regulares",
             size=22,
             weight=ft.FontWeight.BOLD,
         ),
         ft.Text(
-            "Instituto Politécnico Nacional — Escuela Superior de Cómputo (ESCOM) — Teoría de la Computación",
+            "Instituto Politécnico Nacional — Escuela Superior de Cómputo (ESCOM) — Teoría de la Computación (Prácticas 1, 2, 3 y 4)",
             size=13,
         ),
         ft.Divider(),
@@ -601,11 +1088,63 @@ def main(page: ft.Page) -> None:
             wrap=True,
         ),
         tf_salida_p1,
+        ft.Divider(),
+        ft.Text("6. Práctica 4 — Ejercicio 2: De Expresión Regular a Autómata (AFN-λ → AFN → AFD → AFD Mínimo)", size=17, weight=ft.FontWeight.BOLD),
+        ft.Row([dd_casos_ej2, tf_er_ej2, tf_alf_ej2, cb_clases_ej2], wrap=True),
+        ft.Row(
+            [
+                ft.ElevatedButton("Construir AFN-λ, AFN, AFD y AFD Mínimo", on_click=construir_er_a_automata_ui),
+                ft.OutlinedButton("◀ Pieza Parcial Anterior", on_click=paso_kleene_anterior_ui),
+                ft.OutlinedButton("Pieza Parcial Siguiente ▶", on_click=paso_kleene_siguiente_ui),
+                ft.OutlinedButton("Exportar Autómatas a .jff", on_click=exportar_jff_ej2_ui),
+            ],
+            wrap=True,
+        ),
+        ft.Row(
+            [
+                tf_cadena_ej2,
+                ft.ElevatedButton("Validar Cadena(s) con el Autómata", on_click=validar_cadenas_ej2_ui),
+            ],
+            wrap=True,
+        ),
+        txt_estado_ej2,
+        txt_validacion_ej2,
+        txt_paso_kleene_ej2,
+        md_detalle_ej2,
+        ft.Divider(),
+        ft.Text("7. Práctica 4 — Ejercicio 3: De Autómata a Expresión Regular (Eliminación de Estados GNFA y Equivalencia)", size=17, weight=ft.FontWeight.BOLD),
+        ft.Row([dd_casos_ej3, tf_ruta_jff_ej3, tf_er_jflap_ej3], wrap=True),
+        ft.Row(
+            [
+                ft.ElevatedButton("Importar .jff, Verificar Determinismo y Eliminar Estados", on_click=ejecutar_afd_a_er_ui),
+                ft.OutlinedButton("◀ Estado GNFA Anterior", on_click=paso_gnfa_anterior_ui),
+                ft.OutlinedButton("Estado GNFA Siguiente ▶", on_click=paso_gnfa_siguiente_ui),
+            ],
+            wrap=True,
+        ),
+        txt_verif_afd_ej3,
+        txt_paso_gnfa_ej3,
+        md_gnfa_ej3,
+        ft.Divider(),
+        ft.Text("8. Práctica 4 — Ejercicio 4: Aplicaciones — Validadores Basados en Expresiones Regulares", size=17, weight=ft.FontWeight.BOLD),
+        ft.Row([dd_validador_ej4, dd_ejemplos_ej4, tf_texto_ej4], wrap=True),
+        ft.Row(
+            [
+                ft.ElevatedButton("Validar Texto con el Autómata (Ejercicio 2)", on_click=validar_texto_ej4_ui),
+                ft.OutlinedButton("Comprobar Congruencia en 500 Cadenas vs re.fullmatch", on_click=probar_500_cadenas_ej4_ui),
+            ],
+            wrap=True,
+        ),
+        txt_resultado_ej4,
+        md_ficha_ej4,
     )
 
     sincronizar_controles_desde_automata(estado_actual["automata"])  # type: ignore[arg-type]
     ejecutar_simulacion_completa()
     calcular_operaciones_p1()
+    construir_er_a_automata_ui()
+    ejecutar_afd_a_er_ui()
+    actualizar_ficha_validador_ej4(ejecutar_congruencia=False)
 
 
 if __name__ == "__main__":

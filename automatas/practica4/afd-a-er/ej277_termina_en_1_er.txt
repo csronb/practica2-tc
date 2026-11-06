@@ -1,0 +1,3 @@
+Automata: ej277_termina_en_1
+ER_JFLAP: 0*1(1+00*1)*
+ER_SIMPLIFICADA: (0+1)*1

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440">
+  <rect width="960" height="100%" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect width="960" height="54" rx="10" fill="#1e293b"/>
+  <circle cx="24" cy="27" r="7" fill="#ef4444"/>
+  <circle cx="46" cy="27" r="7" fill="#f59e0b"/>
+  <circle cx="68" cy="27" r="7" fill="#10b981"/>
+  <text x="95" y="33" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Práctica 4 — Ejercicio 3: De Autómata a Expresión Regular (Eliminación de Estados GNFA)</text>
+  <text x="24" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Verificación de determinismo en .jff, secuencia GNFA y prueba de equivalencia con JFLAP (Práctica 3)</text>
+  <rect x="24" y="100" width="912" height="164" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="100" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="118" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">1. Eliminación de estados y equivalencia vía AFD mínimos (Lista 3: 254–258 y Lista 4: 276–277)</text>
+  <text x="36" y="142" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej254_termina_en_1.jff    | ER GNFA: 0*1(00*1+1)*                        | JFLAP: 0*1(1+00*1)*        | Eq: True (2q)</text>
+  <text x="36" y="161" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej255_ciclo_par_b.jff     | ER GNFA: λ+(0+1)(0(0+1)+1)*0                 | JFLAP: ((0+1)1*0)*         | Eq: True (2q)</text>
+  <text x="36" y="180" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej256_ternario.jff        | ER GNFA: (1+2)*0(0+1+2(1+2)*0)*              | JFLAP: (1+2)*0(0+1+2...)*  | Eq: True (2q)</text>
+  <text x="36" y="199" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej257_tres_estados_bc.jff | ER GNFA: (01*0+1)((0+1)01*0+(0+1)1)*(λ+...)+ | JFLAP: ((1+01*0)(0+1))*... | Eq: True (3q)</text>
+  <text x="36" y="218" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej258_tres_estados_c.jff  | ER GNFA: (0+1)(0(0(0+1)+1)+1(0+1))*          | JFLAP: (0+1)(01+(1+00)...)*| Eq: True (3q)</text>
+  <text x="36" y="237" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej276_multiplo_3_a.jff    | ER GNFA: b*+b*ab*a(b+ab*ab*a)*ab*            | Arden: (b+ab*ab*a)*        | Eq: True (3q)</text>
+  <text x="36" y="256" font-family="Consolas, monospace" font-size="12" fill="#1e293b">• ej277_termina_en_1.jff    | ER GNFA: 0*1(00*1+1)*                        | Simp : (0+1)*1             | Eq: True (2q)</text>
+  <rect x="24" y="278" width="912" height="136" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+  <rect x="24" y="278" width="912" height="26" rx="6" fill="#e2e8f0"/>
+  <text x="36" y="296" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#0f172a">2. Diagnóstico de no determinismo (indicando estado y símbolo exactos)</text>
+  <text x="36" y="324" font-family="Consolas, monospace" font-size="12.5" fill="#991b1b">• ej196_afnd_lambda.jff  -&gt; es_determinista=False | Estado 'A' con símbolo 'λ' (δ(A,λ)={B}); Estado 'B' con '0' ({A,B})</text>
+  <text x="36" y="347" font-family="Consolas, monospace" font-size="12.5" fill="#991b1b">• ej191_subconjuntos.jff -&gt; es_determinista=False | Estado 'A' con símbolo '0' tiene múltiples destinos: δ(A,0)={A,B}</text>
+  <text x="36" y="374" font-family="Consolas, monospace" font-size="12.5" fill="#065f46">• Paso GNFA 3/3 en ej276 : Eliminados A, B, C -&gt; Estados vivos: ['⊢ini', 'fin⊣'] -&gt; R(⊢ini,fin⊣) = b*+b*ab*a(b+ab*ab*a)*ab*</text>
+</svg>

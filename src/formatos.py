@@ -20,7 +20,10 @@ import math
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from automata import AutomataFinito
+try:
+    from automata import AutomataFinito
+except ImportError:  # pragma: no cover
+    from src.automata import AutomataFinito
 
 
 # =============================================================================

@@ -1,0 +1,3 @@
+Automata: ej256_ternario
+ER_JFLAP: (1+2)*0(0+1+2(1+2)*0)*
+ER_SIMPLIFICADA: (1+2)*0(0+1+2(1+2)*0)*

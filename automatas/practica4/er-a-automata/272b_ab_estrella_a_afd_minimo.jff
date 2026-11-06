@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<structure>
+  <type>fa</type>
+  <automaton>
+    <state id="0" name="{{q4},{q0,q3,q5,q6}}">
+      <x>80.0</x>
+      <y>180.0</y>
+      <initial />
+    </state>
+    <state id="1" name="{q1,q2,q7}">
+      <x>280.0</x>
+      <y>180.0</y>
+      <final />
+    </state>
+    <transition>
+      <from>0</from>
+      <to>1</to>
+      <read>a</read>
+    </transition>
+    <transition>
+      <from>1</from>
+      <to>0</to>
+      <read>b</read>
+    </transition>
+  </automaton>
+</structure>

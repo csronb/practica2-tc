@@ -1,0 +1,3 @@
+Automata: ej276_multiplo_3_a
+ER_JFLAP: b*+b*ab*a(ab*ab*a+b)*ab*
+ER_SIMPLIFICADA: (b+ab*ab*a)*

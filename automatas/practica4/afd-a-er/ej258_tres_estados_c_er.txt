@@ -1,0 +1,3 @@
+Automata: ej258_tres_estados_c
+ER_JFLAP: (0+1)(01+(1+00)(0+1))*
+ER_SIMPLIFICADA: (0+1)(01+(1+00)(0+1))*

@@ -1,0 +1,3 @@
+Automata: ej255_ciclo_par_b
+ER_JFLAP: ((0+1)1*0)*
+ER_SIMPLIFICADA: ((0+1)1*0)*

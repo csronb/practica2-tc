@@ -148,6 +148,35 @@ class LineaReporteCadena:
 
 
 @dataclass
+class ViolacionDeterminismo:
+    """Representa una causa específica por la que un autómata no es determinista (Práctica 4, Ejercicio 3)."""
+
+    estado: str
+    simbolo: str
+    destinos: list[str]
+    motivo: str
+
+
+@dataclass
+class ResultadoVerificacionAFD:
+    """Resultado de verificar si un autómata es determinista indicando qué estado y qué símbolo lo impiden."""
+
+    es_determinista: bool
+    es_completo: bool
+    violaciones: list[ViolacionDeterminismo]
+    transiciones_faltantes: list[tuple[str, str]]
+    mensaje: str
+
+    @property
+    def primer_estado_conflicto(self) -> str | None:
+        return self.violaciones[0].estado if self.violaciones else None
+
+    @property
+    def primer_simbolo_conflicto(self) -> str | None:
+        return self.violaciones[0].simbolo if self.violaciones else None
+
+
+@dataclass
 class AutomataFinito:
     """Representa un Autómata Finito (AFD, AFND o AFND-lambda) como quíntupla."""
 
@@ -191,6 +220,85 @@ class AutomataFinito:
             if len(dest) > 1:
                 return False
         return True
+
+    def verificar_determinismo(self, exigir_completo: bool = False) -> ResultadoVerificacionAFD:
+        """Verifica si el autómata es determinista; en caso contrario, indica qué estado y qué símbolo lo impiden.
+
+        Cumple el primer punto del Ejercicio 3 de la Práctica 4:
+        - Detecta transiciones λ desde cualquier estado q (símbolo 'λ').
+        - Detecta transiciones con múltiples destinos |δ(q, a)| > 1 para cualquier estado q y símbolo a.
+        - Registra transiciones faltantes |δ(q, a)| = 0 (y las reporta como violación si exigir_completo=True).
+        """
+        violaciones: list[ViolacionDeterminismo] = []
+        faltantes: list[tuple[str, str]] = []
+
+        for q in self.estados:
+            dest_lambda = self.destinos(q, "")
+            if dest_lambda:
+                violaciones.append(
+                    ViolacionDeterminismo(
+                        estado=q,
+                        simbolo="λ",
+                        destinos=dest_lambda,
+                        motivo=(
+                            f"El estado '{q}' tiene transición espontánea con el símbolo 'λ' "
+                            f"hacia {{{', '.join(dest_lambda)}}}."
+                        ),
+                    )
+                )
+            for a in self.alfabeto:
+                dest_a = self.destinos(q, a)
+                if len(dest_a) > 1:
+                    violaciones.append(
+                        ViolacionDeterminismo(
+                            estado=q,
+                            simbolo=a,
+                            destinos=dest_a,
+                            motivo=(
+                                f"El estado '{q}' con el símbolo '{a}' tiene múltiples transiciones "
+                                f"({len(dest_a)} destinos): δ({q}, {a}) = {{{', '.join(dest_a)}}}."
+                            ),
+                        )
+                    )
+                elif len(dest_a) == 0:
+                    faltantes.append((q, a))
+                    if exigir_completo:
+                        violaciones.append(
+                            ViolacionDeterminismo(
+                                estado=q,
+                                simbolo=a,
+                                destinos=[],
+                                motivo=(
+                                    f"El estado '{q}' carece de transición definida para el símbolo '{a}' "
+                                    f"(δ({q}, {a}) = ∅)."
+                                ),
+                            )
+                        )
+
+        es_det = len(violaciones) == 0
+        es_comp = len(faltantes) == 0
+
+        if es_det:
+            nota_parcial = (
+                " (función de transición total)"
+                if es_comp
+                else f" (parcial en {len(faltantes)} pares estado-símbolo)"
+            )
+            mensaje = (
+                f"El autómata SÍ es determinista (AFD){nota_parcial}: carece de transiciones λ "
+                f"y cada par (estado, símbolo) tiene a lo sumo un destino."
+            )
+        else:
+            detalles = " ".join(v.motivo for v in violaciones)
+            mensaje = f"El autómata NO es determinista: {detalles}"
+
+        return ResultadoVerificacionAFD(
+            es_determinista=es_det,
+            es_completo=es_comp,
+            violaciones=violaciones,
+            transiciones_faltantes=faltantes,
+            mensaje=mensaje,
+        )
 
     @property
     def tipo(self) -> str:
@@ -1042,3 +1150,20 @@ class AutomataFinito:
                 if set(self.destinos(q, s)) != set(otro.destinos(q, s)):
                     return False
         return True
+
+    @classmethod
+    def desde_jff(cls, ruta: str | Path) -> AutomataFinito:
+        """Carga un autómata desde un archivo `.jff` (delega en `formatos.cargar_automata`)."""
+        try:
+            from formatos import cargar_automata
+        except ImportError:  # pragma: no cover
+            from src.formatos import cargar_automata
+        return cargar_automata(ruta)
+
+    def guardar_jff(self, ruta: str | Path) -> Path:
+        """Exporta el autómata a un archivo `.jff` de JFLAP (delega en `formatos.guardar_automata`)."""
+        try:
+            from formatos import guardar_automata
+        except ImportError:  # pragma: no cover
+            from src.formatos import guardar_automata
+        return guardar_automata(self, ruta)
