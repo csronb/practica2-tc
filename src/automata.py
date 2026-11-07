@@ -846,7 +846,9 @@ class AutomataFinito:
 
         for p, q in pares_totales:
             if (p in conj_finales) != (q in conj_finales):
-                motivo = f"uno está en F y el otro en Q\\F ({p}∈{'F' if p in conj_finales else 'Q\\F'}, {q}∈{'F' if q in conj_finales else 'Q\\F'})"
+                cl_p = "F" if p in conj_finales else "Q\\F"
+                cl_q = "F" if q in conj_finales else "Q\\F"
+                motivo = f"uno está en F y el otro en Q\\F ({p}∈{cl_p}, {q}∈{cl_q})"
                 tabla_marcas[(p, q)] = f"X (R0: {motivo})"
                 marcados_r0.append((p, q, motivo))
 
